@@ -1,0 +1,76 @@
+## 1. Linux环境配置
+**必须安装的软件**
+#### 1.1 Ubuntu
++ `sudo apt-get install git vim openssl build-essential libssh-dev wget curl`
+#### 1.2 CentOS
++ 暂无
+
+## 2. Node安装(使用NVM)
++ `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
++ `nvm use node`
++ `nvm install <Node版本号>`
++ `npm install -g cnpm --registry=https://registry.npm.taobao.org`
++ `cnpm install http-server express express-generator webpack webpack-dev-server gulp nodemon pm2 vue-cli -g`
++ `nvm alias sefault <版本号>`
+
+## 3. Sublime安装
+#### 3.1 Debian/Ubuntu使用APT安装
++ `wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -`
++ `sudo apt-get install apt-transport-https`
++ `echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list`
++ `sudo apt-get update`
++ `sudo apt-get install sublime-text`
+#### 3.2 CentOS使用Yum安装
++ `sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg`
++ `sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo`
++ `sudo yum install sublime-text`
+
+## 4. MongoDB安装
+#### 4.1 Ubuntu安装
++ `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6`
++ Ubuntu 14.04:`echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
++ Ubuntu 16.04:`echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
++ `sudo apt-get update`
++ `sudo apt-get install -y mongodb-org`
++ `sudo service mongod start`
+
+#### 4.2 CentOS安装
++  在`/etc/yum.repos.d/mongodb-org-3.4.repo`文件下输入一下内容
+```
+[mongodb-org-3.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+```
++ `sudo yum install -y mongodb-org`
++ `sudo service mongod start`
+
+## 5. Redis安装
++ 安装编译器：`yum install gcc-c++`
++ `wget http://download.redis.io/releases/redis-4.0.1.tar.gz`
++ `tar xzf redis-4.0.1.tar.gz`
++ `cd redis-4.0.1`
++ `make`
++ 安装Redis：`make PREFIX=/user/local/redis install`
++ **Redis安装目录`/usr/local/redis`**
++ 将redis.conf拷贝到Redis安装目录：`cp redis.conf /usr/local/redis`
++ 进入安装目录，更改redis.conf文件：`vim redis.conf --> daemonize no 改为 yes`
++ 启动redis后端模式：` /usr/local/redis/bin/redis-server /usr/local/redis/redis.conf`
++ 使用 `ps -ef  | grep -i redis` 查看服务是否启动
++ 使用 `./bin/redis-cli shutdown` 停止服务
++ 从redis目录下输入`./bin/redis-cli`,再输入`ping`输出`PONG`表示连接没有问题
++  java使用 jedis 链接远程 远程redis 需要在 `redis.conf` 添加 `bind 167.88.179.35` （本机IP）
+
+## 6. Yarn安装
++ `yarn config set registry https://registry.npm/taobao.org`
+#### 6.1 Debian/Ubuntu
++ `curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -`
++ `echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
++ `sudo apt-get update && sudo apt-get install yarn`
+
+#### 6.2 CentOS/Fedora/RHEL
++ `sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo`
++ `curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -`
++ `sudo yum install yarn`

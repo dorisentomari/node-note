@@ -1,0 +1,5 @@
+minimist [options]
+
+-h/--help  you can get more helpful infomation
+-v/--version  get the package's version infomation
+

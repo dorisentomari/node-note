@@ -1,0 +1,11 @@
+#! /usr/bin/env node
+
+var args = require('./')(process.argv.slice(2));
+var fs = require('fs');
+console.log('');
+if( args.v || args.version ){
+  console.log('v1.0.0');
+} else if(args.h || args.help){
+    fs.createReadStream('./usage.txt').pipe(process.stdout);
+   // fs.readFileSync('./usage.txt','utf-8').pipe(process.stdout)
+}
