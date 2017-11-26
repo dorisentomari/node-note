@@ -11,7 +11,7 @@
 + `nvm install <Node版本号>`
 + `npm install -g cnpm --registry=https://registry.npm.taobao.org`
 + `cnpm install http-server express express-generator webpack webpack-dev-server gulp nodemon pm2 vue-cli -g`
-+ `nvm alias sefault <版本号>`
++ `nvm alias default <版本号>`
 
 ## 3. Sublime安装
 #### 3.1 Debian/Ubuntu使用APT安装
@@ -75,7 +75,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -`
 + `sudo yum install yarn`
 
-## Git 
+## Git的使用方法
 + `git add .`
 + check status:`git status`
 + `git commit -m "some messages"`
