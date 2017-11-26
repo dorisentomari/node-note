@@ -74,3 +74,11 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo`
 + `curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -`
 + `sudo yum install yarn`
+
+## Git 
++ `git add .`
++ check status:`git status`
++ `git commit -m "some messages"`
++ `git remote rm origin`
++ `git remote add origin git@github.com/Dawnight/node.git`
++ `git push origin master`
