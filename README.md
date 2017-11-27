@@ -75,10 +75,11 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -`
 + `sudo yum install yarn`
 
-## Git的使用方法
+## 7. git的使用方法
 + `git add .`
-+ check status:`git status`
++ `git status`
 + `git commit -m "some messages"`
 + `git remote rm origin`
 + `git remote add origin git@github.com/Dawnight/node.git`
 + `git push origin master`
++ 同步代码:`git pull`
