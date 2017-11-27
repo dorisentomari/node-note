@@ -146,6 +146,6 @@ fs.open('./file02.txt', 'w', function(err, fd){
 	}
 })
 
-
+// fsyncSync();
 
 
