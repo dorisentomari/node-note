@@ -29,6 +29,3 @@ server.listen(1337, '127.0.0.1')
 使用EventEmitter类的listenerCount方法获取HTTP服务器独享的request事件的事件处理函数数量，并在控制台中将其输出
 */
 console.log(events.EventEmitter.listenerCount(server, 'request'))
-
-
-
