@@ -48,7 +48,6 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `sudo service mongod start`
 
 ## 5. Redis安装
-+ 安装编译器：`yum install gcc-c++`
 + `wget http://download.redis.io/releases/redis-4.0.1.tar.gz`
 + `tar xzf redis-4.0.1.tar.gz`
 + `cd redis-4.0.1`
@@ -65,6 +64,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 ## 6. Yarn安装
 + `yarn config set registry https://registry.npm/taobao.org`
+
 #### 6.1 Debian/Ubuntu
 + `curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -`
 + `echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
@@ -80,6 +80,19 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `git status`
 + `git commit -m "some messages"`
 + `git remote rm origin`
-+ `git remote add origin git@github.com/Dawnight/node.git`
++ `git remote add origin git@github.com:Dawnight/node.git`
 + `git push origin master`
-+ 同步代码:`git pull`
++ 同步master代码:`git pull origin master`
+
+## 8. 升级gcc
++ link:`http://blog.csdn.net/origin_lee/article/details/43231397`
++ `wget http://gcc.skazkaforyou.com/releases/gcc-4.9.1/gcc-4.9.1.tar.gz` **or** `wget http://gcc.skazkaforyou.com/releases/gcc-4.8.2/gcc-4.8.2.tar.gz`
++ `tar -xf gcc-4.9.1.tar.gz`
++ `cd cd gcc-4.9.1`
++ `cd gcc-4.9.1`
++ `mkdir gcc_temp`
++ `cd gcc_temp`
++ `../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib`
++ `../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib`
++ `make`
++ `make install`
