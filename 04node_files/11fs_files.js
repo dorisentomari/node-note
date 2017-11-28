@@ -1,5 +1,5 @@
 var fs = require('fs');
-/*
+
 //读取文件同步
 var dataSync = fs.readFileSync('./file01.txt', 'utf-8');
 console.log('dataSync');
@@ -129,7 +129,7 @@ fs.open('./file02.txt', 'wx', function(err, fd){
 	//fs.clodeSync(fd);
 })
 
-*/
+
 //在使用write方法或者writeSync方法在文件中写入数据时,操作系统的做法是首先将该部分数据读取到内存中,再把数据写到文件中,当数据读取完毕时不代表数据已经写完,因为还有一步部分可能会留在内存缓冲区中.这时候如果调用close或者closeSync方法关闭文件,那么这部分数据就会丢失,这时候就可以采用fs模块中的fsync方法对文件进行同步操作,即将内存缓冲区中的剩余数据全部写入文件. 
 var buf = new Buffer('我喜欢编程');
 fs.open('./file02.txt', 'w', function(err, fd){
@@ -147,5 +147,3 @@ fs.open('./file02.txt', 'w', function(err, fd){
 })
 
 // fsyncSync();
-
-

@@ -66,7 +66,7 @@ fs.symlink('./one/one.js', './two/one.js', 'file', function(err){
 		});
 	}
 })
-*/
+
 
 // fs.symlinkSync(srcPath, dstPath, [type])
 
@@ -110,3 +110,66 @@ fs.truncate('./one/one.js', 10, function(err){
 
 // fs.truncateSync(filename, length)
 
+// 使用open或者openSync方法打开文件并返回描述符后,可以使用fs模块中的ftruncate方法截断文件
+// failed example
+fs.open('./one/one.js', 'r', function(err ,fd){
+	if(err){
+		console.log('fs.open ./one/one.js file failed');
+	}else{
+		fs.ftruncate(fd, 10, function(err){
+			if(err){
+				console.log('fs.ftruncate ./one/one.js file failed');
+				console.log(err)
+			}else{
+				console.log('fs.ftruncate ./one/one.js file success');
+			}
+		})
+	}
+})
+
+// 删除空目录
+
+fs.rmdir('./two', function(err){
+	if(err){
+		console.log('fs.rmdir ./two file failed');
+	}else{
+		console.log('fs.rmdir ./two file success')
+	}
+})
+
+fs.rmdirSync(path);
+
+
+// 监视文件或目录
+// 使用watchFile方法对文件进行监视，并且在监视到文件被修改时执行某些处理方法
+// fs.watchFile(filename, [options], listener)
+// options 是一个对象，persistent属性默认为true，所以当监视文件后，应用程序没有被立即退出，改为false就会立即退出。
+// options interval属性方法设置每隔多少毫秒检查一下该文件有没有发生变化
+// function(curr, prev); curr是fs.Stats对象，代表被修改之后的当前文件
+// prev参数值也是一个fs.Stats对象，代表被修改之前的当前文件。
+var filename = './file01.txt';
+fs.watchFile(filename, {persistent: false, interval: 60*60*1000 }, function(curr, prev){
+	console.log(curr);
+	console.log(prev);
+	if(Date.parse(prev.ctime) ==0 ){
+		console.log(`${filename}文件被创建`);
+	}else if(Date.parse(curr.ctime) == 0){
+		console.log(`${filename}文件被删除`);
+	}else if(Date.parse(prev.mtime) !== Date.parse(curr.mtime)){
+		console.log(`${filename}文件被修改`);
+	}else{
+		console.log(`${filename}文件～～～～～`)
+	}
+	if(Date.parse(curr.ctime) !=0 ){
+		console.log(`${filename}文件的尺寸为${curr.size}bytes`)
+	}
+})
+*/
+// fs.unwatchFile(filename, [listener])
+// watch方法，对文件或目录进行监视，并且在监视到文件或目录被修改时执行某些处理
+// fs.watch(filename, [options], [listener])
+var watcher = fs.watch('./file01.txt', function(event, filename){
+	console.log(event);//事件名
+	console.log(filename);//文件名
+	watcher.close();//关闭监视
+})
