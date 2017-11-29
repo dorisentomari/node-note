@@ -9,7 +9,7 @@ fs.mkdir(mkdir, function(err){
 		console.log(`mkdir ${mkdir} file success`)
 	}
 })
-/*
+
 fs.mkdir(mkdir + '/one', function(err){
 	if(err){//如果有该目录,就创建失败
 		console.log(`mkdir ${mkdir} /one file failed`);
@@ -60,7 +60,7 @@ fs.stat('./one', function(err, stats){
 		console.log('fs.stat("./one") file success');
 	}
 })
-*/
+
 /*
 Stats {
   dev: 2050,文件或目录所在的设备ID,仅在UNIX有效
@@ -82,7 +82,7 @@ Stats {
   ctime: 2017-11-28T05:20:25.257Z,文件的创建时间
   birthtime: 2017-11-28T05:20:25.257Z 
 }
-
+*/
 
 // 同步方法查看文件信息
 // var stats = fs.statSync(path);
@@ -160,7 +160,7 @@ fs.chmod(mkdir, 0600, function(err){
 		console.log(`fs.chmod ${mkdir} file success`);
 	}
 })
-*/
+
 // fs.chmodSync(path, mode);
 
 // 在使用open方法或openSync方法打开文件并返回文件描述符之后，可以使用fs模块中的fchmod方法修改文件的读写权限

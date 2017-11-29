@@ -9,7 +9,7 @@ var fs = require('fs');
 //		start: '',//使用整数值来指定文件的开始读取位置		
 //		end: ''//使用整数值来指定文件的结束读取位置
 //}
-/*
+
 var file = fs.createReadStream('./file01.txt', {start:2, end: 12, encoding:'utf8'})
 file.on('open', function(fd){
 	console.log('file.on open start read file~');
@@ -130,7 +130,7 @@ file.pipe(out, {end: false});
 file.on('end', function(){
 	out.end('byebye')
 })
-*/
+
 // 取消文件的pipe操作
 // readStream.unpipe([destination])
 // 实际上是pipe了，如果out文件太大，则会在10毫秒之后取消pipe
