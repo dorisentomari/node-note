@@ -96,3 +96,61 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib`
 + `make`
 + `make install`
+
+## 9. 安装Nginx
+**全部安装在`/usr/local/src`目录下边**
+#### 9.1 安装PCRE库
++ `cd /usr/local/src`
++ `wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz`
++ `tar zxvf pcre-8.39.tar.gz`
++ `cd pcre-8.39`
++ `./configure`
++ `make`
++ `make install`
+
+#### 9.2 安装Zlib库
++ `cd /usr/local/src`
++ `wget http://zlib.net/zlib-1.2.11.tar.gz`
++ `tar zxvf zlib-1.2.11.tar.gz`
++ `cd zlib-1.2.11`
++ `./configure`
++ `make`
++ `make install`
+
+#### 9.3 安装openssl
++ `cd /usr/local/src`
++ `wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz`
++ `tar zxvf openssl-1.1.0g.tar.gz`
++ `./config`
++ `make`
++ `make install`
+
+#### 9.4 安装Nginx
++ `cd /usr/local/`
++ `wget http://nginx.org/download/nginx-1.8.0.tar.gz`
++ `tar -zxvf nginx-1.8.0.tar.gz`
++ `cd nginx-1.8.0`
++ `./configure --prefix=/usr/local/nginx --with-pcre=/usr/local/pcre-8.39 --with-zlib=/usr/local/zlib-1.2.11`
+    * 在`--prefix`后面接以下命令:
+    * `--with-pcre=/usr/local/pcre-8.39` 指的是pcre-8.39 的源码路径。
+    * `--with-zlib=/usr/local/zlib-1.2.11` 指的是zlib-1.2.11 的源码路径。 
++ `make`
++ `make install`
+
+#### 9.5 Nginx控制
++ 启动:`/usr/local/nginx/sbin/nginx`or`/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf`
++ 重启:`/usr/local/nginx/sbin/nginx -s reload`or`kill -HUP <pid>`
++ 停止:`/usr/local/nginx/sbin/nginx -s stop`
+    * 查看进程:`ps -ef|grep nginx`
+    * 从容停止:`kill -QUIT <pid>`
+    * 快速停止:`kill -TERM <pid>`or`kill -INT <pid>`
+    * 强制停止:`pkill -9 <pid>`
++ 测试配置文件是否正常:`/usr/local/nginx/sbin/nginx –t -c /usr/local/nginx/conf/nginx.conf`
++ Nginx的信号控制
+    * `HUP`,重启
+    * `QUIT`,从容关闭
+    * `TERM`,快速关闭
+    * `INT`,从容关闭
+    * `USR1`,切换日志文件 `kill -USR1 <pid>`
+    * `USR2`,平滑升级可执行进行 `kill -USR2 <pid>`
+    * `WINCH`,从容关闭工作进程
