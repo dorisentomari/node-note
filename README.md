@@ -145,7 +145,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
     * 从容停止:`kill -QUIT <pid>`
     * 快速停止:`kill -TERM <pid>`or`kill -INT <pid>`
     * 强制停止:`pkill -9 <pid>`
-+ 测试配置文件是否正常:`/usr/local/nginx/sbin/nginx –t -c /usr/local/nginx/conf/nginx.conf`
++ 测试配置文件是否正常:`/usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf`
 + Nginx的信号控制
     * `HUP`,重启
     * `QUIT`,从容关闭
