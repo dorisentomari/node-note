@@ -88,11 +88,10 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + link:`http://blog.csdn.net/origin_lee/article/details/43231397`
 + `wget http://gcc.skazkaforyou.com/releases/gcc-4.9.1/gcc-4.9.1.tar.gz` **or** `wget http://gcc.skazkaforyou.com/releases/gcc-4.8.2/gcc-4.8.2.tar.gz`
 + `tar -xf gcc-4.9.1.tar.gz`
-+ `cd cd gcc-4.9.1`
 + `cd gcc-4.9.1`
++ `./contrib/download_prerequisites`
 + `mkdir gcc_temp`
 + `cd gcc_temp`
-+ `../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib`
 + `../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib`
 + `make`
 + `make install`
