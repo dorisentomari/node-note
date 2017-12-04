@@ -78,3 +78,45 @@ server.close([callback()])
 
 在使用close方法时,并不会断开所有现存的客户端连接.当这些客户端连接被关闭时,TCP服务器将会自动关闭,同时触发TCP服务器的close事件.close的回调函数是否有参数都可以.
 
+## socket端口对象
+
+在node.js中，使用net.Socket代表一个socket端口对象，在使用createServer方法的connectionListener参数所指定的回调函数(当客户端与服务器端建立连接时调用)的参数值即为一个被自动创建的net.Socket对象(代表的服务器所监听的端口对象),在对TCP服务器所指定的connection事件回调函数的参数值同样为一个被自动创建的net.Socket对象(代表TCP服务器所监听的端口对象)
+
+与TCP服务器独享的address方法相类似,可以利用socket端口对象的address方法获取该socket端口对象相关的地址信息
+```
+var address = socket.address();
+```
+该方法返回一个对象,其中具有以下的属性
++ port:TCP服务器监听的socket端口号
++ address:TCP服务器监听的地址,如127.0.0.1
++ family:一个标识了TCP服务器所监听的地址的是IPv4地址还是IPv6地址的字符串,例如`IPv4`
+
+socket端口对象可被用来读取客户端发送的流数据,每次接收到客户端发送的流数据时触发data事件,可通过对该事件进行监听并且指定回调函数的方法来指定当服务器端监听的socket端口对象接收到客户端发送的数据时所需要执行的处理。
+
+```
+socket.on('data', function(data){})
+```
+
+在该回调函数中，使用给一个参数，参数值为一个Buffer对象(在未使用socket端口对象的setEncoding方法指定编码时)或者一个字符串对象(在使用socket端口对象的setEncoding方法指定编码方式后)
+
+data获取到的是一个存放了服务到的数据的缓存区对象，如果我们在对data事件进行监听之后使用编码格式，将在控制台中以字符串形式输出读取到的数据。
+
+方法一:
+```
+socket.setEncoding('utf8');
+socket.on('data', function(data){
+    console.log(data)
+})
+```
+
+方法二:
+```
+socket.on('data', function(data){
+    console.log(data.toString())    
+})
+```
+
+
+
+
+
