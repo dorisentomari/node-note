@@ -80,7 +80,7 @@ server.close([callback()])
 
 ## socket端口对象
 
-在node.js中，使用net.Socket代表一个socket端口对象，在使用createServer方法的connectionListener参数所指定的回调函数(当客户端与服务器端建立连接时调用)的参数值即为一个被自动创建的net.Socket对象(代表的服务器所监听的端口对象),在对TCP服务器所指定的connection事件回调函数的参数值同样为一个被自动创建的net.Socket对象(代表TCP服务器所监听的端口对象)
+在node.js中,使用net.Socket代表一个socket端口对象,在使用createServer方法的connectionListener参数所指定的回调函数(当客户端与服务器端建立连接时调用)的参数值即为一个被自动创建的net.Socket对象(代表的服务器所监听的端口对象),在对TCP服务器所指定的connection事件回调函数的参数值同样为一个被自动创建的net.Socket对象(代表TCP服务器所监听的端口对象)
 
 与TCP服务器独享的address方法相类似,可以利用socket端口对象的address方法获取该socket端口对象相关的地址信息
 ```
@@ -91,15 +91,15 @@ var address = socket.address();
 + address:TCP服务器监听的地址,如127.0.0.1
 + family:一个标识了TCP服务器所监听的地址的是IPv4地址还是IPv6地址的字符串,例如`IPv4`
 
-socket端口对象可被用来读取客户端发送的流数据,每次接收到客户端发送的流数据时触发data事件,可通过对该事件进行监听并且指定回调函数的方法来指定当服务器端监听的socket端口对象接收到客户端发送的数据时所需要执行的处理。
+socket端口对象可被用来读取客户端发送的流数据,每次接收到客户端发送的流数据时触发data事件,可通过对该事件进行监听并且指定回调函数的方法来指定当服务器端监听的socket端口对象接收到客户端发送的数据时所需要执行的处理.
 
 ```
 socket.on('data', function(data){})
 ```
 
-在该回调函数中，使用给一个参数，参数值为一个Buffer对象(在未使用socket端口对象的setEncoding方法指定编码时)或者一个字符串对象(在使用socket端口对象的setEncoding方法指定编码方式后)
+在该回调函数中,使用给一个参数,参数值为一个Buffer对象(在未使用socket端口对象的setEncoding方法指定编码时)或者一个字符串对象(在使用socket端口对象的setEncoding方法指定编码方式后)
 
-data获取到的是一个存放了服务到的数据的缓存区对象，如果我们在对data事件进行监听之后使用编码格式，将在控制台中以字符串形式输出读取到的数据。
+data获取到的是一个存放了服务到的数据的缓存区对象,如果我们在对data事件进行监听之后使用编码格式,将在控制台中以字符串形式输出读取到的数据.
 
 方法一:
 ```
@@ -116,7 +116,69 @@ socket.on('data', function(data){
 })
 ```
 
+#### pipe
+可以通过socket对象的pipe方法将客户端发送的流数据写到文件等其他目标对象中
+`socket.pipe(destination, [options]);`
+pipe方法有两个参数,其中destination参数为必须输入参数,options参数为可选参数.destination参数值必须为一个可用于写入流数据的对象.options参数值为一个对象,可以在该对象中使用一个布尔类型的end属性,如果该属性值为true,则当数据全被读取完毕时立即结束写操作,如果该属性值为false,目标对象中可以被继续写入新的数据,该属性的默认值为true;
+```
+var net = require('net');
+var file = require('fs').createWriteStream('./message.txt');
+var server = net.createServer();
+server.on('connection', function(socket){
+    socket.pipe(file, {end: false});
+    socket.on('end', function(){
+        file.end('byebye');    
+    })
+});
+server.listen(9999, 'localhost');
+```
+
+使用unpipe方法取消目标对象的写入操作
+`socket.unpipe([destination])`
+
+#### pause
+可以使用socket端口对象的pause方法暂停data事件的触发,这时服务器端将把每一个客户端发送的数据暂存在一个单独的缓存区中.
+`socket.pause();`
+在使用了pause方法暂停data事件的触发后,可以使用socket端口对象的resume方法恢复data事件的触发,这时将读取被缓存的该客户端的数据.
+`socket.resume();`
+
+#### timeout
+通过监听socket端口对象的tiemout事件并且指定该事件回调函数的方法来指定当客户端连接超时时所需要执行的处理
+```
+server.on('connection', function(socket){
+    socket.setTimeout(10*1000);
+    socket.pause();
+    socket.on('timeout', function(){
+        socket.resume();
+        socket.pipe(file);    
+    });    
+    socket.on('data', function(data){
+        socket.pause();    
+    })
+})
+```
 
 
+## 创建TCP客户端
 
+```
+var net = require('net');
+var socket = new net.Socket([options]);
+```
+options对象与TCP服务器的options参数属性一样
 
+#### 方法一
+`socket.connect(port, [host], [connectListener])`
+
+#### 方法二
+`socket.connect(path, [connectListener]);`
+此时socket端口有下边的几个属性
++ remoteAddress:连接另一端所使用的远程地址
++ remotePort:连接另一端所使用的端口号
++ localAddress:本地用于建立连接的地址
++ localPort:本地用于建立连接的端口号
+socket端口对象可以被用来写入向客户端或服务器端发送的流数据,当流数据被写入后将立即发送到客户端或服务器.当需要写入流数据时,使用socket端口对象的write方法
+`socket.write(data, [encoding], [callback]);`
+该回调函数不需要参数
+
+在一个快速的网络中,当数据量较少的时候,nodejs总是将数据直接发送到操作系统专用于发送数据的TCP缓存区中,然后从该TCP缓存区中取出数据发送个对象.在一个慢速的网络中或者需要发送大量数据的时,TCP客户端或服务器所发送的数据并不一定会立即被对方所接收,在这种情况下,nodejs会将这些数据缓存在u缓存队列中,在对方可以接收数据的情况下降缓存队列中的数据通过TCP缓存区发送给对象.socket端口对象的write方法返回一个布尔类型值,饭改数据直接被发送到TCP缓存区中时,该返回值为true,当数据首先被发送到缓存队列时,该返回值为false.当返回值为false且TCP缓存区中的数据已全部发送出去时,触发drain事件.
