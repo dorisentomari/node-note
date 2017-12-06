@@ -1,0 +1,4 @@
+客户端请求的方法为:POST
+客户端请求的url字符串为:/test
+客户端请求头对象为:{"user-agent":"curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.14.0.0 zlib/1.2.3 libidn/1.18 libssh2/1.4.2","host":"localhost:2576","accept":"*/*","content-length":"9","content-type":"application/x-www-form-urlencoded"}
+客户端请求所用的HTTP版本为:1.1
