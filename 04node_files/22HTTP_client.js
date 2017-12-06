@@ -1,5 +1,4 @@
 // 普通客户端
-
 var http = require('http');
 var options = {
 	hostname: 'localhost',

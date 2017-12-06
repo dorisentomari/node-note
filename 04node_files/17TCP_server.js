@@ -9,7 +9,7 @@ server.on('connection', function(socket){
 	});
 
 	socket.on('error', function(err){
-		console.log('在与客户端通信的过程中发生了一个错误，错误编码为 %s', err.code);
+		console.log('在与客户端通信的过程中发生了一个错误,错误编码为 %s', err.code);
 		socket.destroy();
 	});
 	socket.on('end', function(){
