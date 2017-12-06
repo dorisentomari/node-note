@@ -33,12 +33,12 @@ https.createServer(options, [requestListener(request, response)])
 + handshakeTimeout: 属性值为一个整数，用于指定多少秒内如果没有完成客户端与服务器之间的握手，则放弃本次连接，默认属性值为120s。当在指定时间内没有完成握手时，将处罚HTTPS服务器的clientError事件。
 + honorCipherOrder: 属性值为一个布尔值，当属性值指定为true时，服务器将密码列表发送给客户端，有客户端选择密码，尽管该属性值默认为false，但是仍推荐奖该属性值设置为true，以阻止BEAST攻击
 + requestCert: 属性值为一个布尔值，当属性值指定为true时，服务器在确认连接时要求客户端提供证书，默认属性值为false
-+ rejectUnauthorized:属性值为一个布尔值，如果属性值为true，那么服务器拒绝任何不能提供服务器端所要求的证书的客户端。只有当requestCert属性值指定为true时，该属性 值才有效，默认属性值为false
++ rejectUnauthorized:属性值为一个布尔值，如果属性值为true，那么服务器拒绝任何不能提供服务器端所要求的证书的客户端。只有当requestCert属性值指定为true时，该属性值才有效，默认属性值为false
 + NPNProtocols: 属性值为一个数组或一个Buffer对象，用于指定服务器端所需使用的NPN协议(这些协议应该按照其优先级排序)。NPN(Next Protocol Negotiation)协议是一种用于指定服务器可以使用多种协议(包括HTTP,SPDY协议等)的协议
 + sessionIdContext: 属性值指定为true,那么默认属性值为一个MD5散列值，如果requestCert属性值指定为false,不提供默认属性值
 
 ## HTTPS服务器对象的创建示例
-```
+```node
 var https = require('https');
 var fs = require('fs');
 var pk = fs.readFileSync('./privatekey.pem');

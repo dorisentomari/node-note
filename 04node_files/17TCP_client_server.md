@@ -1,6 +1,6 @@
 ## 创建TCP客户端
 
-```
+```node
 var net = require('net');
 var socket = new net.Socket([options]);
 ```
