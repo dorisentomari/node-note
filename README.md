@@ -37,16 +37,17 @@
 + `sudo service mongod start`
 
 #### 4.2 CentOS安装
-+  在`/etc/yum.repos.d/mongodb-org-3.4.repo`文件下输入一下内容
++  在`/etc/yum.repos.d/mongodb-org-3.6.repo`文件下输入一下内容
 ```
-[mongodb-org-3.4]
+[mongodb-org-3.6]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 ```
-+ `sudo yum install -y mongodb-org`
++ `sudo yum install -y mongodb-org-3.6.0 mongodb-org-server-3.6.0 mongodb-org-shell-3.6.0 mongodb-org-mongos-3.6.0 mongodb-org-tools-3.6.0
+`
 + `sudo service mongod start`
 
 ## 5. Redis安装
