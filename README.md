@@ -155,3 +155,12 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
     * `USR1`,切换日志文件 `kill -USR1 <pid>`
     * `USR2`,平滑升级可执行进行 `kill -USR2 <pid>`
     * `WINCH`,从容关闭工作进程
+
+## 10. 更改yum源与更新系统
+#### CentOS更改
++ 首先备份`/etc/yum.repos.d/CentOS-Base.repo`
++ `cd /etc/yum.repos.d/`
++ 下载163的yum源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
++ 运行yum makecache生成缓存`yum makecache`
++ 更新系统`yum -y update`
+

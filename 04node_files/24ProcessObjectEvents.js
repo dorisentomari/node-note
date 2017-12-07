@@ -67,3 +67,31 @@ var data = fs.readFileSync('./file01.txt');
 var diff = process.hrtime(time);
 console.log('读取文件操作耗费%d纳秒', diff[0]*1e9 + diff[1]);
 // 读取文件操作耗费106736纳秒
+
+
+/** Node.js中的进程对象可能触发的事件 */
+// exit()事件
+// 当运行Node.js应用程序的进程退出时触发进程对象的exit事件。可以通过指定事件回调函数来指定进程退出时所需要执行的处理，在该回调函数中不使用任何参数
+process.on('exit', function(){
+    console.log('Node.js进程被退出');
+})
+process.exit();
+
+
+// uncaughtException事件
+// 当Node.js应用程序中抛出一个未被捕获的异常时触发进程对象的uncaughtException事件
+// 可以通过对该事件指定回调函数的方法来指定对所有异常的默认处理，以比秒应用程序的异常退出，在该回调函数中使用一个参数，参数值为抛出的异常对象
+// 未来可能会被删除，不建议使用，建议使用domain模块的异常处理机制
+process.on('uncaughtException', function(err){
+    console.log('捕获到一个未被处理的错误：'+ err);
+})
+
+// 各种信号事件
+// 当运行Node.js应用程序的进程接收到各种事件时，会触发各种信号事件。
+// 当其接收到一个SIGINT信号时，会触发一个SIGINT事件。
+// 可以通过对这些事件进行监听并指定事件回调函数的方法来指定当接收到该信号时所需要执行的处理，在该事件回调函数中，不使用任何参数。
+
+process.stdin.resume();
+process.on('SIGINT', function(){
+    console.log('接收到SIGIT信号')
+})
