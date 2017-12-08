@@ -78,9 +78,6 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `sudo yum install yarn`
 
 ## 7. git的使用方法
-+ 生成ssh命令`ssh-keygen -t rsa -C "yourmail@mail.com"`
-+ `git config --global user.name "Dawnight"`   
-+ `git config --global user.email "yourmail@mail.com"`      
 + `yum install git-core`
 + `git add .`
 + `git status`
