@@ -46,8 +46,7 @@ gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 ```
-+ `sudo yum install -y mongodb-org-3.6.0 mongodb-org-server-3.6.0 mongodb-org-shell-3.6.0 mongodb-org-mongos-3.6.0 mongodb-org-tools-3.6.0
-`
++ `sudo yum install -y mongodb-org`
 + `sudo service mongod start`
 
 ## 5. Redis安装
