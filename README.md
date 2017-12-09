@@ -58,7 +58,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + **Redis安装目录`/usr/local/redis`**
 + 将redis.conf拷贝到Redis安装目录：`cp redis.conf /usr/local/redis`
 + 进入安装目录，更改redis.conf文件：`vim redis.conf --> daemonize no 改为 yes`
-+ 启动redis后端模式：` /usr/local/redis/bin/redis-server /usr/local/redis/redis.conf`
++ 启动redis后端模式：`/usr/local/redis/bin/redis-server /usr/local/redis/redis.conf`
 + 使用 `ps -ef  | grep -i redis` 查看服务是否启动
 + 使用 `./bin/redis-cli shutdown` 停止服务
 + 从redis目录下输入`./bin/redis-cli`,再输入`ping`输出`PONG`表示连接没有问题
