@@ -58,27 +58,28 @@ cipher对象的update方法总是返回一个被分块的加密数据，因此�
 可以使用cipher对象的final方法返回加密数据，当该方法被调用时，任何cipher对象中所缓存的数据都将被加密，如果加密数据的字节数不足以创建一个块，将使用PKCS填充方式来填充这个块，在使用了cipher对象的final方法后，不能再向cipher对象中追加加密数据。`cipher.final([output_encoding])`，如果使用了该参数，那么final方法返回字符串格式的加密数据，如果不使用该参数，那么final方法返回一个buffer对象，当cipher对象的final方法被调用后，该对象不能再被使用。
 
 
+##### 解密数据
 
+在crypto模块中，Decipher类用于对加密后的数据进行解密操作，在解密数据之前，首先需要创建一个decipher对象，可以通过下边两种方法创建decipher对象。
++ createDecipher方法，使用指定的算法与密码来创建decipher对象`crypto.createDecipher(algorithm, password)`password参数用于指定加密时所使用的密码，必须为一个二进制格式的字符串或一个Buffer对象，返回一个被创建的decipher对象
 
++ createDecipheriv方法，使用指定的算法，密码与初始向量来创建decipher对象`crypto.createDecipheriv(algorithm, password, iv)`iv参数用于指定加密时所使用的初始向量，参数值必须为一个二进制的字符串或者一个Buffer对象。返回一个被创建的decipher对象。
 
+创建一个decipher对象之后，可以通过使用该对象的update方法指定需要被解密的数据`decipher.update(data, [input_encoding], [output_encoding])`
 
+可以使用decipher对象的final方法返回经过解密之后的原始数据。`decipher.final([output_encoding])`
 
+##### 创建签名
 
+在网络中，私钥的拥有者可以在一段数据被发送之前先对数据进行签名操作，在签名的过程中，将对这段数据执行加密处理，在经过加密后的数据发送之后，数据的接受者可以通过公钥的使用来对该签名进行解密及验证操作，以确保这段数据时私钥的拥有者发出的原始数据，且在网络的传输过程中未被修改。
 
+在Node.js中，进行签名操作之前，首先需要使用createSign方法创建一个sign对象，`crypto.createSign(algorithm)`,在createSign方法中，使用一个参数，用于指定在加密该数据时所使用的算法，例如`RSA-SHA256`,createSign方法返回被创建的sign对象。
 
+在创建了一个sign对象后，可以通过使用该对象的update方法用来指定需要被加密的数据。`sign.update(data)`,可以在对数据进行签名前多次使用update方法来添加数据。
 
+可以使用sign对象的sign方法对数据进行签名，在使用sign对象的sign方法之后，不能再使用sign对象的update方法追加数据。`sign.sign(privare_key, [output_format])`;在sign对象的sign方法中，有两个参数，其中private_key参数为必须指定的参数，output_format参数为可选参数。private_key参数为一个字符串，用于指定PEM格式的私钥。output_format参数值用于指定签名输出时所使用的编码格式，如果使用了该参数，sign方法返回字符串格式的签名内容，如果不使用该参数，sign方法返回了一个Buffer对象，当sign对象的sign方法被调用之后，该对象不能再被使用。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##### 签名验证
+再ctypto模块中，Verify类用于对签名进行验证操作，在对签名进行验证之前，首先需要创建一个verify对象，可以通过createVerify方法创建verify对象。`crypto.createVerify(algorithm)`,在createVerify方法中，使用一个参数，用于指定在验证签名数据时所使用的算法，例如`RSA-SHA256`，该算法必须与加密该数据时所使用的算法保持一致,createVerify方法返回一个被创建的verify对象。
+创建额verify对象之后，可以通过使用该对象的update方法来指定需要被验证的数据。`verify.update(data)`,使用一个参数，用于指定需要验证的数据，可以使用多次update方法来添加需要验证的数据。
+可以使用verify对象的verify方法来对签名进行验证，verify方法使用方法`verify.verify(object, signature, [signature_format])`,其中object参数与signature参数为必须指定参数，signature参数值必须为sign对象，用于指定被验证的签名。object参数用于指定验证时所使用的对象，参数值为一个字符串，该字符串可以为一个RSA公钥，一个DSA公钥或一个X.509证书。signature_format用于指定在生成该签名时所使用的编码格式，可以指定为hex,binary,base64.如果验证通过，verify方法返回true,如果验证不通过，verify方法返回false.
