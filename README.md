@@ -49,6 +49,18 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + `sudo yum install -y mongodb-org`
 + `sudo service mongod start`
 
+#### 4.3 Windows安装
++ 从官网下载安装包进行安装,安装目录为`F:/software/MongoDB/`
++ 创建data目录，在data目录下创建db和log两个目录
++ 进入`F:/software/MongoDB/bin`目录,`F:\software\MongoDB\bin>mongod --dbpath F:\software\MongoDB\data\db`
++ 进入刚创建的log目录,创建`mongodb.log`文件
++ 进入`F:/software/MongoDB/`目录,创建`mongodb.config`配置文件
+```
+dbpath=F:/software/MongoDB/data/db
+logpath=F:/software/MongoDB/data/log/mongodb.log  
+```
++ 利用管理员身份打开命令行,输入`mongod --config F:/software/MongoDB/mongodb.config --install --serviceName "MongoDB"`
+
 ## 5. Redis安装
 + `wget http://download.redis.io/releases/redis-4.0.1.tar.gz`
 + `tar xzf redis-4.0.1.tar.gz`
