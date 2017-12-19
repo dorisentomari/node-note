@@ -1,12 +1,12 @@
 # 2. request
-> req对象表示 HTTP 请求, 并且具有请求查询字符串、参数、正文、http 标头等属性
+> req对象表示HTTP请求,并且具有请求查询字符串,参数,正文,http标题头等属性
 ```node
 app.get('/user/:id', function (req, res) {
     res.send('user ' + req.params.id);
 });
 ```
 ## 2.1 `req.app()`
-+ app保存了很多对使用中间件的 express 应用程序实例的引用
++ app保存了很多对使用中间件的express应用程序实例的引用
 ```node
 // one.js
 module.exports = function (req, res) {
@@ -38,10 +38,10 @@ let app = express();
 
 app.use(bodyParser.json());// parsing application/json
 app.use(bodyParser.urlencoded({extended: true}));// parsing application/x-www-form-urlencoded
-app.use(cookieParser()); // parsing cookies
+app.use(cookieParser())
 app.post('/', function (req, res) {
     console.log('Cookies: ', req.cookies);
-	console.log('Signed Cookies: ', req.signedCookies);
+    console.log('Signed Cookies: ', req.signedCookies);
     console.log('req.body', req.body);
     res.json(req.body);
 });
@@ -50,4 +50,60 @@ app.post('/', function (req, res) {
     console.log(req.body);
     res.json(req.body);
 });
+```
+
+### 2.4 `fresh,hostname,ip,ips,protocol`
+```node
+app.get('/files/download/:user', function (req, res) {
+    console.log('req.fresh:', req.fresh);
+    console.log('req.stale:', req.stale);
+    console.log('req.hostname:', req.hostname);
+    console.log('req.ip:', req.ip);
+    console.log('req.ips:', req.ips);
+    console.log('req.protocol:', req.protocol);
+    console.log('req.url:', req.url);
+    console.log('req.originalUrl:', req.originalUrl);
+    console.log('req.xhr:', req.xhr);
+    console.log('req.params:', req.params);
+    console.log('req.path:', req.path);
+    console.log('time line===========');
+    res.json(req.body);
+});
+/***
+request url: http://localhost:1111/files/download/mark
+req.fresh: false
+req.stale: true
+req.hostname: localhost
+req.ip: 127.0.0.1
+req.ips: []
+req.protocol: http
+req.url: /files/download/mark// req.url是Node的http模块的属性,不是Express的
+req.originalUrl: /files/download/mark
+req.subdomains: []
+req.xhr: false
+req.params: { user: 'mark' }
+req.path: /files/download/mark
+***/
+```
+### 2.5 `req.route`
+```node
+app.get('/user/:id?', function(req, res){
+    console.log(req.route);
+    res.send('send get message route')
+});
+/***
+Route {
+  path: '/user/:id?',
+  stack:
+   [ Layer {
+       handle: [Function],
+       name: '<anonymous>',
+       params: undefined,
+       path: undefined,
+       keys: [],
+       regexp: /^\/?$/i,
+       method: 'get' } ],
+  methods: { get: true } 
+}
+***/
 ```
