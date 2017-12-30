@@ -91,16 +91,21 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 
 ## 7. git的使用方法
 + 生成ssh命令`ssh-keygen -t rsa -C "yourmail@mail.com"`
-+ `git config --global user.name "Dawnight"`   
-+ `git config --global user.email "yourmail@mail.com"`      
++ `git config --global user.name "Dawnight"`
++ `git config --global user.email "yourmail@mail.com"`
 + `yum install git-core`
 + `git add .`
 + `git status`
 + `git commit -m "some messages"`
 + `git remote rm origin`
-+ `git remote add origin git@github.com:Dawnight/node.git`
++ `git remote add origin <remoteRepositoryAddress>`
 + `git push origin master`
-+ 同步master代码:`git pull origin master`
++ `git pull origin master`，同步master代码
++ 查看本地分支`git branch -a`
++ 查看远程分支`git branch -r`
++ 创建本地分支`git branch <branchName>`
++ 切换分支`git checkout <branchName>`
++ 将本地分支push到远程分支`git push origin <localBranchName>:<remoteBranchName>`，只写这一条命令，表示创建一个远程分支
 
 ## 8. 升级gcc
 + link:`http://blog.csdn.net/origin_lee/article/details/43231397`
