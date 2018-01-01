@@ -5,7 +5,12 @@
 #### 1.1 Ubuntu
 + `sudo apt-get install git vim openssl build-essential libssh-dev wget curl`
 #### 1.2 CentOS
-+ 暂无
++ 更改`yum`源与更新系统
++ 首先备份`/etc/yum.repos.d/CentOS-Base.repo`
++ `cd /etc/yum.repos.d/`
++ 下载163的yum源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
++ 运行`yum makecache`生成缓存`yum makecache`
++ 更新系统`yum -y update`
 
 ## 2. Node安装(使用NVM)
 + `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
@@ -61,7 +66,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 ```
 + 利用管理员身份打开命令行,输入`mongod --config F:/software/MongoDB/mongodb.config --install --serviceName "MongoDB"`
 
-## 5. Redis安装
+## 5.`Redis`安装
 + `wget http://download.redis.io/releases/redis-4.0.1.tar.gz`
 + `tar xzf redis-4.0.1.tar.gz`
 + `cd redis-4.0.1`
@@ -176,12 +181,4 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
     * `USR1`,切换日志文件 `kill -USR1 <pid>`
     * `USR2`,平滑升级可执行进行 `kill -USR2 <pid>`
     * `WINCH`,从容关闭工作进程
-
-## 10. 更改yum源与更新系统
-#### CentOS更改
-+ 首先备份`/etc/yum.repos.d/CentOS-Base.repo`
-+ `cd /etc/yum.repos.d/`
-+ 下载163的yum源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
-+ 运行yum makecache生成缓存`yum makecache`
-+ 更新系统`yum -y update`
 
