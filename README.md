@@ -32,26 +32,28 @@
 + `sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo`
 + `sudo yum install sublime-text`
 
-## 4. MongoDB安装
+## 4. MongoDB安装(v3.6)
 #### 4.1 Ubuntu安装(目前安装步骤有问题,可能会失败)
-+ `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6`
-+ Ubuntu 14.04:`echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
-+ Ubuntu 16.04:`echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
++ `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5`
++ Ubuntu 14.04:`echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
++ Ubuntu 16.04:`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
 + `sudo apt-get update`
 + `sudo apt-get install -y mongodb-org`
++ `sudo apt-get install -y mongodb-org=3.6.1 mongodb-org-server=3.6.1 mongodb-org-shell=3.6.1 mongodb-org-mongos=3.6.1 mongodb-org-tools=3.6.1`
 + `sudo service mongod start`
 
 #### 4.2 CentOS安装
-+  在`/etc/yum.repos.d/mongodb-org-3.4.repo`文件下输入一下内容
++  在`/etc/yum.repos.d/mongodb-org-3.6.repo`文件下输入一下内容
 ```
-[mongodb-org-3.4]
+[mongodb-org-3.6]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 ```
 + `sudo yum install -y mongodb-org`
++ `sudo yum install -y mongodb-org-3.6.1 mongodb-org-server-3.6.1 mongodb-org-shell-3.6.1 mongodb-org-mongos-3.6.1 mongodb-org-tools-3.6.1`
 + `sudo service mongod start`
 
 #### 4.3 Windows安装
