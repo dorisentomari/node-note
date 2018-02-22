@@ -1,34 +1,32 @@
-var http = require('http');
-var server = http.createServer();
+const http = require('http');
+let server = http.createServer();
+server.on('removeListener', (e, f) => {
+	console.log(e + 'events has been canceled');
+});
 
-/** bind events */
-server.on('removeListener', function(e, f){
-	console.log(e + ' events has been conceled')
-})
+server.on('newListener', (e, f) => {
+	console.log(e + 'events has been added');
+});
 
-server.on('newListener', function(e, f){
-	console.log(e + ' events has been added')
-})
-
-var testFunction = function(req, res){
-	if(req.url!=='/favicon.ico'){
-		console.log('send message finished')
+let testFunction = function (req, res) {
+	if (req.url !== '/favicon.ico') {
+		console.log('test Function Send Message finished');
 	}
 }
 
-server.on('request', function(req,res){
-	if(req.url!== '/favicon.ico'){
-		console.log('has received client request');
+server.on('request', (req, res) => {
+	if (req.url !== '/favicon.ico') {
+		console.log('has recevied client request');
 	}
-})
+});
 
-server.on('request', function(req, res){
-	if(req.url!=='/favicon.ico'){
-		console.log(req.url)
+server.on('request', (req, res) => {
+	if (req.url !== '/favicon.ico') {
+		console.log(req.url);
 	}
 	res.end();
-})
-/** happen events */
+});
+
 server.on('request', testFunction);
-server.removeListener('request', testFunction)
-server.listen(1337,'127.0.0.1')
+server.removeListener('request', testFunction);
+server.listen(1337, '127.0.0.1');
