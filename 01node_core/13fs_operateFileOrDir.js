@@ -51,7 +51,7 @@ fs.unlink(writeFileName, function (err) {
 });
 
 // 创建与查看符号链接
-// type--> file, dir(default), junction(only windows)
+// type--> file, dir(default,非windows只能使用dir), function(only windows)
 // fs.symlink(srcPath, dstPath, [type], callback(err))
 fs.symlink('./one/one.js', './two/one.js', 'file', function (err) {
 	if (err) {
@@ -172,4 +172,4 @@ var watcher = fs.watch('./file01.txt', function (event, filename) {
 	console.log(event);//事件名
 	console.log(filename);//文件名
 	watcher.close();//关闭监视
-})
+});
