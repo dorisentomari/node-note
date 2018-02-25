@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<title>使用AJAX获取Node.js服务器数据</title>
 	<script type="text/javascript">
-		window.onload = function(){
-			function getData(){
+		window.onload = function () {
+			function getData() {
 				var xhr = new XMLHttpRequest();
 				xhr.open('GET', 'http://192.168.50.245:3333', true);
-				xhr.onreadystatechange = function(){
-					if(xhr.readyState === 4){
-						if(xhr.status === 200){
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status === 200) {
 							var info = xhr.responseTest;
 							document.getElementById('div').innerText = info;
 						}
@@ -21,7 +21,7 @@
 	</script>
 </head>
 <body>
-	<button onclick="getData()">getData</button>
-	<div id="div"></div>
+<button onclick="getData()">getData</button>
+<div id="div"></div>
 </body>
 </html>

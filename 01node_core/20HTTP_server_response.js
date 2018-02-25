@@ -35,29 +35,29 @@ Etag:用于指定当服务器端响应内容没有变化时不重新下载数据
 // 默认情况下HTTP服务器会自动将服务器端当前时间作为响应头中的Date字段值发送给客户端，可以通过将res.sendDate属性值设置为false的方法，在响应头中删除Date字段
 // res.sendDate = false;
 
-/*
-var http = require('http');
-var server = http.createServer(function(req, res){
-    if(req.url !== '/favicon.ico'){
-        res.write('<html><head><meta charset="utf-8"/></head></html>');
-        if(res.headersSent){
-            console.log('第一个响应头已经发送');
-        }else{
-            console.log('第一个响应头未发送');
-        }
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        if(res.headersSent){
-            console.log('第二个响应头已经发送');
-        }else{
-            console.log('第二个响应头未发送');
-        }
-        res.write('hello, this is http server response content');
-    }
-    res.end();
-}).listen(3333, 'localhost', function(){
-    console.log('the http server is running at localhost:3333')
+
+const http = require('http');
+let server = http.createServer(function (req, res) {
+	if (req.url !== '/favicon.ico') {
+		res.write('<html><head><meta charset="utf-8"/></head></html>');
+		if (res.headersSent) {
+			console.log('第一个响应头已经发送');
+		} else {
+			console.log('第一个响应头未发送');
+		}
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		if (res.headersSent) {
+			console.log('第二个响应头已经发送');
+		} else {
+			console.log('第二个响应头未发送');
+		}
+		res.write('hello, this is http server response content');
+	}
+	res.end();
+}).listen(3333, 'localhost', function () {
+	console.log('the http server is running at localhost:3333')
 });
-*/
+
 // 响应头不再发送date字段
 /*
 var http = require('http');
@@ -74,22 +74,19 @@ var server = http.createServer(function(req, res){
 });
 */
 // 使用res.addTrailers(headers)方法在响应数据的尾部追加一个头信息
-/*
-var http = require('http');
-var server = http.createServer(function(req, res){
-    if(req.url !== '/favicon.ico'){
-		res.statusCode = 200;
-		res.sendDate = true;
-		res.setHeader('Content-Type', 'text/html');
-        res.write('hello, this is http server response content\n');
+
+const http = require('http');
+let server = http.createServer(function (req, res) {
+	if (req.url !== '/favicon.ico') {
+		res.writeHead(200, {'Content-Type': 'text/plain', 'Trailer': 'Content-MD5'});
 		res.addTrailers({'Content-MD5': '5Q8W9XS5AS98ZX2X5V8V3ZX3ZA8'});
-        res.write('hello, these are some new massage');
-    }
-    res.end();
-}).listen(3333, 'localhost', function(){
-    console.log('the http server is running at localhost:3333')
+		res.write('hello, these are some new massage');
+	}
+	res.end();
+}).listen(3333, 'localhost', function () {
+	console.log('the http server is running at localhost:3333')
 });
-*/
+
 // 读取文件
 /*
 var http = require('http');
@@ -112,19 +109,19 @@ var server = http.createServer(function(req, res){
 */
 // setTimeout方法的使用
 var http = require('http');
-var server = http.createServer(function(req, res){
-    if(req.url !== '/favicon.ico'){
+var server = http.createServer(function (req, res) {
+	if (req.url !== '/favicon.ico') {
 		res.setTimeout(1000);
-		res.on('timeout', function(){
+		res.on('timeout', function () {
 			console.log('响应超时');
 		});
-		setTimeout(function(){
+		setTimeout(function () {
 			res.setHeader('Content-Type', 'text/html');
 			res.write('<html><head><meta charset="utf-8"/></head></html>');
 			res.write('hello, this is some new message;');
 			res.end();
 		})
-    }
-}).listen(3333, 'localhost', function(){
-    console.log('the http server is running at localhost:3333')
+	}
+}).listen(3333, 'localhost', function () {
+	console.log('the http server is running at localhost:3333')
 });

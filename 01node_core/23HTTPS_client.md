@@ -1,26 +1,4 @@
-在HTTPS模块中,可以使用request方法向其他使用HTTPS协议的网站请求数据
-```
-var req = https.request(options, callback(res){})
-```
-options为一个对象或字符串,用于指定请求的目标的URL地址,如果该参数值为一个字符串,将自动使用url模块中的parse方法转换为一个对象.在options参数值对象或使用parse方法转换后对象中,可以指定的属性及属性值如下所示
 
-+ host: 用于指定域名或目标主机的IP地址,默认属性为localhost
-+ hostname: 用于指定域名或目标主机的IP地址,默认属性为localhost, 如果hostname属性值与host属性值都被指定,优先使用hostname属性值
-+ port: 指定目标服务器用于HTTP客户单连接的端口号,默认为443
-+ method: 用于指定HTTP请求方式,默认为`GET`
-+ path: 用于指定请求路径及查询字符串,默认为`/`
-+ headers: 用于指定客户端请求头对象
-+ auth: 用于指定认证信息部分,例如`user:password`
-+ agent: 用于指定用户代理
-**当在options参数值对象中使用如下所示的属性及属性值时,不能使用全局https.Agent对象**
-+ pfx: 属性值为一个字符串或一个Buffer对象,用于指定从pfx文件读取出的私钥,公钥及证书,使用该属性值不需要指定key属性值,cert属性值以及ca属性值.
-+ key: 属性值为一个字符串或一个Buffer对象,用于指定从后缀名为pem的私钥文件中读取出来的私钥,该属性值为必须指定属性值,除非指定了pfx属性值
-+ passphrase: 属性值为一个自飞船,用于为私钥文件或pfx文件指定密码
-+ cert: 属性值为一个字符串或一个Buffer对象,用于指定从后缀名为pem的文件中读物出来的公钥,该属性值为必须指定属性值,除非指定了pfx属性值
-+ ca: 属性值为一个字符串或一个Buffer对象数组,用于指定一组证书,默认属性值为几个著名的证书授权认证中心,比如VerlSign
-+ crl: 属性值为一个字符串或一个Buffer对象数组,用于指定证书吊销列表
-+ ciphers: 属性值为一个字符串值,用于描述需要使用或取消使用的密码.为了阻挡BEAST攻击,推荐奖ciphers属性与honorCipherOrder属性结合使用,以指定非CBC(Cipher-block chaining,密码分组链接)模式的密码优先级,默认属性值为`AES128-GCM-SHA256: RC4: HIGH: !MD5: !aNULL: !EDH`
-+ rejectUnauthorized:属性值为一个布尔值,如果属性值为true,那么服务器在客户端建立连接后,返回响应前首先验证客户端提交的证书,如果验证失败,触发客户端请求对象的error事件.
 
 ```node
 var https = require('https');
