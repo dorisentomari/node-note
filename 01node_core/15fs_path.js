@@ -26,11 +26,11 @@ file.on('data', function(data){
 */
 console.log(path.relative('/usr/local', '/usr/games'));//../games
 
-// basename(p, [ext]) 获取一个路径中的文件名
-// p 必须为一个文件的完整路径
+// basename(path, [ext]) 获取一个路径中的文件名
+// path 必须为一个文件的完整路径
 // ext 用于在方法所返回的文件中名中去除该文件的扩展名
 
-console.log(path.basename('./file01.txt', '.txt'));//file01
+console.log(path.basename('./userinfo.txt', '.txt'));//file01
 
 // extname() 获取一个路径中的文件的扩展名
 // 没有指定扩展名时，返回一个空字符串
