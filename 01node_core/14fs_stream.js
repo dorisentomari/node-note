@@ -10,52 +10,52 @@ var fs = require('fs');
 //		end: ''//使用整数值来指定文件的结束读取位置
 //}
 
-var file = fs.createReadStream('./file01.txt', {start:2, end: 12, encoding:'utf8'})
-file.on('open', function(fd){
+var file = fs.createReadStream('./file01.txt', {start: 2, end: 12, encoding: 'utf8'})
+file.on('open', function (fd) {
 	console.log('file.on open start read file~');
 })
 
 file.pause();//pause reading the file
 
-file.on('data', function(data){
+file.on('data', function (data) {
 	console.log('file.on data read content');
 	console.log(data);
 })
 
-setTimeout(function(){
+setTimeout(function () {
 	file.resume();
 	console.log('continue reading the file');
-},1000)
+}, 1000)
 
-file.on('end', function(){
+file.on('end', function () {
 	console.log('file.on end read stop');
 })
 
-file.on('close', function(){
+file.on('close', function () {
 	console.log('file.on close the file');
 })
 
-file.on('error', function(err){
+file.on('error', function (err) {
 	console.log('read file with err', err)
 })
 
 // 使用WriteStream对象写入文件
-// fs,createWriteStream(path, [options])
-var file = fs.createReadStream('./file02.txt', {tart:2, end: 12, encoding:'utf8'})
+// fs.createWriteStream(path, [options])
+var file = fs.createReadStream('./file02.txt', {tart: 2, end: 12, encoding: 'utf8'})
 var out = fs.createWriteStream('./file03.txt');
-file.on('data', function(data){
-	out.write(data, function(){
+file.on('data', function (data) {
+	out.write(data, function () {
 		console.log('data.toString()');
 		console.log(data.toString());
 	});
 });
 
-out.on('open', function(fd){
+out.on('open', function (fd) {
 	console.log('the file has been opened');
 })
 
-file.on('end', function(){
-	out.end('byebye', function(){
+file.on('end', function () {
+	out.end('byebye', function () {
 		console.log('the file has been written finished');
 		console.log(`${out.bytesWritten}`)
 	})
@@ -65,22 +65,22 @@ file.on('end', function(){
 //观察writeStream对象的write方法的返回结果并监听drain事件
 
 var out = fs.createWriteStream('./file01.txt');
-for(var i=1;i<=100;i++){
+for (var i = 1; i <= 100; i++) {
 	var flag = out.write(i.toString());
 	console.log(flag);
 }
 
-out.on('drain', function(){
+out.on('drain', function () {
 	console.log('操作系统缓存区中的数据已经被全部输出');
 })
 
 var out = fs.createWriteStream('./file02.txt');
-for(var i =0;i<=10;i++){
+for (var i = 0; i <= 10; i++) {
 	var flag = out.write(i.toString());
 	console.log(flag);
 }
 
-out.on('drain', function(){
+out.on('drain', function () {
 	console.log('操作系统缓存区中的数据已经被全部输出');
 })
 
@@ -90,21 +90,21 @@ out.on('drain', function(){
 
 var readStream = fs.createReadStream('./music/music.mp3');
 var out = fs.createWriteStream('./music/music2.mp3');
-readStream.on('data', function(data){
+readStream.on('data', function (data) {
 	var flag = out.write(data);
 	console.log(flag)
 })
 
-out.on('drain', function(){
+out.on('drain', function () {
 	console.log('操作系统缓存区中的数据已经被全部输出')
 })
 
-out.on('error', function(er){
+out.on('error', function (er) {
 	console.log('err')
 })
 
 var out = fs.createWriteStream('./file02.txt');
-out.on('error', function(err){
+out.on('error', function (err) {
 	console.log('文件写入操作发生错误');
 })
 
@@ -127,7 +127,7 @@ file.pipe(out);
 var file = fs.createReadStream('./file02.txt');
 var out = fs.createWriteStream('./file04.txt');
 file.pipe(out, {end: false});
-file.on('end', function(){
+file.on('end', function () {
 	out.end('byebye')
 })
 
@@ -137,7 +137,7 @@ file.on('end', function(){
 var file = fs.createReadStream('./file02.txt');
 var out = fs.createWriteStream('./file04.txt');
 file.pipe(out, {end: false});
-setTimeout(function(){
+setTimeout(function () {
 	file.unpipe(out);
 	out.end();
 }, 10)
