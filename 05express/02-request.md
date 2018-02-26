@@ -1,13 +1,13 @@
 # 2. request
 > req对象表示HTTP请求,并且具有请求查询字符串,参数,正文,http标题头等属性
-```node
+```javascript
 app.get('/user/:id', function (req, res) {
     res.send('user ' + req.params.id);
 });
 ```
 ## 2.1 `req.app()`
-+ app保存了很多对使用中间件的express应用程序实例的引用
-```node
++ `app`保存了很多对使用中间件的`express`应用程序实例的引用
+```javascript
 // one.js
 module.exports = function (req, res) {
     res.send('The views directory is ' + req.app.get('views'))
@@ -19,7 +19,7 @@ app.get('/one', require('./one.js'))
 
 ## 2.2 `req.baseUrl`
 + 挂载在路由实例上的URL路径
-```node
+```javascript
 let greet = express.Router();
 
 greet.get('/one', function (req, res) {
@@ -32,7 +32,7 @@ app.use('/greet', greet);
 
 ## 2.3 `req.body`和`req.cookies`
 + 包含在请求正文中提交的数据的键值对,默认情况下,它是未定义的,当您使用体解析中间件(如`body-parser`和`multer`)时,它将被填充
-```node
+```javascript
 let bodyParser = require('body-parser');
 let app = express();
 
@@ -53,7 +53,7 @@ app.post('/', function (req, res) {
 ```
 
 ### 2.4 `fresh,hostname,ip,ips,protocol`
-```node
+```javascript
 app.get('/files/download/:user', function (req, res) {
     console.log('req.fresh:', req.fresh);
     console.log('req.stale:', req.stale);
@@ -77,7 +77,7 @@ req.hostname: localhost
 req.ip: 127.0.0.1
 req.ips: []
 req.protocol: http
-req.url: /files/download/mark// req.url是Node的http模块的属性,不是Express的
+req.url: /files/download/mark// req.url是javascript的http模块的属性,不是Express的
 req.originalUrl: /files/download/mark
 req.subdomains: []
 req.xhr: false
@@ -86,7 +86,7 @@ req.path: /files/download/mark
 ***/
 ```
 ### 2.5 `req.route`
-```node
+```javascript
 app.get('/user/:id?', function(req, res){
     console.log(req.route);
     res.send('send get message route')
