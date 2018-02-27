@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e312394-e6e1-4318-9321-7532d24ba8f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/05express/express04.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/05express/01-application.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/05express/02-request.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/05express/03-response.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/05express/04-route.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/05express/images/res.png" afterPath="$PROJECT_DIR$/05express/images/res.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/05express/express01.md" afterPath="$PROJECT_DIR$/05express/express01.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01node_core/28DNS.js" afterPath="$PROJECT_DIR$/01node_core/28DNS.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01node_core/28DNS.md" afterPath="$PROJECT_DIR$/01node_core/28DNS.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03命令行/minimist" afterPath="$PROJECT_DIR$/03命令行/minimist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/05express/express04.md" afterPath="$PROJECT_DIR$/05express/express04.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,13 +19,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="express04.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/05express/express04.md">
+      <file leaf-file-name="28DNS.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01node_core/28DNS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="28DNS.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01node_core/28DNS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="198">
-                <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                <folding />
+              <first_editor relative-caret-position="1694">
+                <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+                <folding>
+                  <marker date="1519741248596" expanded="true" signature="3034:3092" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3141:3208" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3255:3442" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3283:3440" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="3491:3583" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3519:3581" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="3639:3683" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3667:3681" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="3739:4009" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="3767:4007" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="4065:4136" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="4093:4134" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="4195:4315" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="4198:4247" ph="//..." />
+                  <marker date="1519741248596" expanded="true" signature="4373:4452" ph="{...}" />
+                  <marker date="1519741248596" expanded="true" signature="4503:4597" ph="{...}" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -47,9 +71,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>node</find>
+      <find>DNS</find>
+      <find>) {</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript</replace>
+      <replace>`DNS`</replace>
+      <replace>)=&gt; {</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -61,6 +89,9 @@
         <option value="$PROJECT_DIR$/05express/express01.md" />
         <option value="$PROJECT_DIR$/05express/express03.md" />
         <option value="$PROJECT_DIR$/05express/express04.md" />
+        <option value="$PROJECT_DIR$/03命令行/minimist" />
+        <option value="$PROJECT_DIR$/01node_core/28DNS.js" />
+        <option value="$PROJECT_DIR$/01node_core/28DNS.md" />
       </list>
     </option>
   </component>
@@ -70,9 +101,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-6" />
-    <option name="width" value="836" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="320" />
+    <option name="width" value="904" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -105,7 +136,7 @@
             <path>
               <item name="Node.jsNotes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Node.jsNotes" type="462c0819:PsiDirectoryNode" />
-              <item name="05express" type="462c0819:PsiDirectoryNode" />
+              <item name="01node_core" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -140,17 +171,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519738413917</updated>
-      <workItem from="1519738417484" duration="460000" />
+      <workItem from="1519738417484" duration="2834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460000" />
+    <option name="totallyTimeSpent" value="2834000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19866072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -179,61 +211,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/05express/express01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="176">
-            <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="13" />
-            <folding>
-              <marker date="1519738611324" expanded="true" signature="1295:1327" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="2280:2327" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3071:3115" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3325:3355" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3409:3545" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3424:3461" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3467:3543" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="3922:3974" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4019:4076" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4115:4184" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4187:4249" ph="/**called only once ...*/" />
-              <marker date="1519738611324" expanded="true" signature="4329:4385" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4436:4493" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4538:4607" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="4610:4697" ph="/**called only once kkk ...*/" />
-              <marker date="1519738611324" expanded="true" signature="5205:5262" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="5299:5394" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="5318:5386" ph="{&quot;msg&quot;: 'route get msg'...}" />
-              <marker date="1519738611324" expanded="true" signature="5432:5488" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="6078:6221" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="6393:6425" ph="{...}" />
-              <marker date="1519738611324" expanded="true" signature="6495:6523" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05express/express02.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="154">
-            <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-            <folding>
-              <marker date="1519726924870" expanded="true" signature="114:156" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="281:347" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="522:586" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="1097:1262" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="1300:1354" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="1817:2312" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="2334:2708" ph="/**request url: http://localhost:1111/files/download/mark ...*/" />
-              <marker date="1519726924870" expanded="true" signature="2786:2856" ph="{...}" />
-              <marker date="1519726924870" expanded="true" signature="2859:3137" ph="/**req.route: Route { ...*/" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/05express/express03.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -274,9 +251,178 @@
     <entry file="file://$PROJECT_DIR$/05express/express04.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="198">
-            <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <first_editor relative-caret-position="110">
+            <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="16" />
             <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05express/express02.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="154">
+            <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <folding>
+              <marker date="1519726924870" expanded="true" signature="114:156" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="281:347" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="522:586" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="1097:1262" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="1300:1354" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="1817:2312" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="2334:2708" ph="/**request url: http://localhost:1111/files/download/mark ...*/" />
+              <marker date="1519726924870" expanded="true" signature="2786:2856" ph="{...}" />
+              <marker date="1519726924870" expanded="true" signature="2859:3137" ph="/**req.route: Route { ...*/" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05express/express01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="-1232">
+            <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="23" />
+            <folding>
+              <marker date="1519738611324" expanded="true" signature="1295:1327" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="2280:2327" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3071:3115" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3325:3355" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3409:3545" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3424:3461" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3467:3543" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3922:3974" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4019:4076" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4115:4184" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4187:4249" ph="/**called only once ...*/" />
+              <marker date="1519738611324" expanded="true" signature="4329:4385" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4436:4493" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4538:4607" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4610:4697" ph="/**called only once kkk ...*/" />
+              <marker date="1519738611324" expanded="true" signature="5205:5262" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="5299:5394" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="5318:5386" ph="{&quot;msg&quot;: 'route get msg'...}" />
+              <marker date="1519738611324" expanded="true" signature="5432:5488" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6078:6221" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6393:6425" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6495:6523" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03命令行/info.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="220">
+            <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03命令行/usage.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03命令行/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02爬虫/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02爬虫/imoocCrawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02爬虫/requestCheerio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03命令行/minimist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/24ProcessObjectEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/27compress.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="-3130">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/28DNS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/28DNS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1694">
+            <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <folding>
+              <marker date="1519741248596" expanded="true" signature="3034:3092" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3141:3208" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3255:3442" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3283:3440" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="3491:3583" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3519:3581" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="3639:3683" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3667:3681" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="3739:4009" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="3767:4007" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="4065:4136" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="4093:4134" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="4195:4315" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="4198:4247" ph="//..." />
+              <marker date="1519741248596" expanded="true" signature="4373:4452" ph="{...}" />
+              <marker date="1519741248596" expanded="true" signature="4503:4597" ph="{...}" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
