@@ -1,22 +1,5 @@
-let a = {
-    "date": "Sun, 25 Feb 2018 14:24:24 GMT",
-    "content-type": "text/html; charset=utf-8",
-    "transfer-encoding": "chunked",
-    "connection": "close",
-    "server": "GitHub.com",
-    "status": "200 OK",
-    "cache-control": "no-cache",
-    "vary": "X-PJAX, Accept-Encoding",
-    "x-ua-compatible": "IE=Edge,chrome=1",
-    "set-cookie": ["logged_in=no; domain=.github.com; path=/; expires=Thu, 25 Feb 2038 14:24:24 -0000; secure; HttpOnly", "_gh_sess=eyJzZXNzaW9uX2lkIjoiMDY1YjM2ZmU4ZGM5MTFlZTliNjllMDI5ZDg0YzQ0ODUiLCJsYXN0X3JlYWRfZnJvbV9yZXBsaWNhcyI6MTUxOTU2ODY2NDUzMywiX2NzcmZfdG9rZW4iOiJ1ck5qWmZTMkpkeGpxMlN2ZzJhbklJM2pvaTJMVWEzWHcvSXEvTGtzVzBrPSJ9--8b5c0c203b3767a35f046b5ea4e375715e4d95be; path=/; secure; HttpOnly"],
-    "x-request-id": "1faefb3e691e8adc7e1a7d727c07236f",
-    "x-runtime": "0.050658",
-    "expect-ct": "max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"",
-    "content-security-policy": "default-src 'none'; base-uri 'self'; block-all-mixed-content; child-src render.githubusercontent.com; connect-src 'self' uploads.github.com status.github.com collector.githubapp.com api.github.com www.google-analytics.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com wss://live.github.com; font-src assets-cdn.github.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; img-src 'self' data: assets-cdn.github.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src assets-cdn.github.com; style-src 'unsafe-inline' assets-cdn.github.com; worker-src 'self'",
-    "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
-    "x-content-type-options": "nosniff",
-    "x-frame-options": "deny",
-    "x-xss-protection": "1; mode=block",
-    "x-runtime-rack": "0.058378",
-    "x-github-request-id": "1B82:60FF:117094:18A2C0:5A92C717"
-}
+console.log('this is line 1');
+console.log('this is line 2');
+console.log('this is line 3');
+console.log('this is line 4');
+console.log('this is line 5');
