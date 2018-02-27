@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e312394-e6e1-4318-9321-7532d24ba8f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01node_core/28DNS.js" afterPath="$PROJECT_DIR$/01node_core/28DNS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01node_core/28DNS.md" afterPath="$PROJECT_DIR$/01node_core/28DNS.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03命令行/minimist" afterPath="$PROJECT_DIR$/03命令行/minimist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/05express/express04.md" afterPath="$PROJECT_DIR$/05express/express04.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01node_core/29punycode_OS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01node_core/31readline_util.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,39 +18,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="28DNS.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01node_core/28DNS.js">
+      <file leaf-file-name="31readline.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01node_core/31readline.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            <state relative-caret-position="418">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="28DNS.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01node_core/28DNS.md">
+      <file leaf-file-name="29punycode_OS.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01node_core/29punycode_OS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="1694">
-                <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <first_editor relative-caret-position="38">
+                <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
                 <folding>
-                  <marker date="1519741248596" expanded="true" signature="3034:3092" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3141:3208" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3255:3442" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3283:3440" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="3491:3583" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3519:3581" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="3639:3683" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3667:3681" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="3739:4009" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="3767:4007" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="4065:4136" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="4093:4134" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="4195:4315" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="4198:4247" ph="//..." />
-                  <marker date="1519741248596" expanded="true" signature="4373:4452" ph="{...}" />
-                  <marker date="1519741248596" expanded="true" signature="4503:4597" ph="{...}" />
+                  <marker date="1519743242786" expanded="true" signature="2375:3033" ph="/*...*/" />
+                  <marker date="1519743242786" expanded="true" signature="3071:3850" ph="/*...*/" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -92,6 +77,7 @@
         <option value="$PROJECT_DIR$/03命令行/minimist" />
         <option value="$PROJECT_DIR$/01node_core/28DNS.js" />
         <option value="$PROJECT_DIR$/01node_core/28DNS.md" />
+        <option value="$PROJECT_DIR$/01node_core/29punycode_OS.md" />
       </list>
     </option>
   </component>
@@ -102,7 +88,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="320" />
+    <option name="x" value="540" />
+    <option name="y" value="23" />
     <option name="width" value="904" />
     <option name="height" value="745" />
   </component>
@@ -171,18 +158,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519738413917</updated>
-      <workItem from="1519738417484" duration="2834000" />
+      <workItem from="1519738417484" duration="4940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2834000" />
+    <option name="totallyTimeSpent" value="4940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19866072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17410715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -403,7 +390,7 @@
     <entry file="file://$PROJECT_DIR$/01node_core/28DNS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1694">
+          <first_editor relative-caret-position="1782">
             <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
             <folding>
               <marker date="1519741248596" expanded="true" signature="3034:3092" ph="{...}" />
@@ -425,6 +412,76 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/29punycode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/32util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/32util.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/30os.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/29punycode_OS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="38">
+            <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+            <folding>
+              <marker date="1519743242786" expanded="true" signature="2375:3033" ph="/*...*/" />
+              <marker date="1519743242786" expanded="true" signature="3071:3850" ph="/*...*/" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/31readline_util.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01node_core/31readline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
