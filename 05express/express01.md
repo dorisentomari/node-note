@@ -1,4 +1,4 @@
-## express()
+## 1.express()
 + 基于Node.js平台，快速、开放、极简的web开发框架。
 > 创建一个`Express`应用.`express()`是一个由`express`模块导出的入口`top-level`函数.
 
@@ -6,7 +6,7 @@
 const express = require('express');
 let app = express();
 ```
-## 1. 静态资源管理
+## 1.1 静态资源管理
 + `express.static(root, [options])`
 + `express.static`,是`Express`内置的唯一一个中间件.是基于`serve-static`开发的,负责托管`Express`应用内的静态资源.
 + `root`,参数指的是静态资源文件所在的根目录.
@@ -18,11 +18,11 @@ let app = express();
     * `index`,`Boolean`类型,发送目录索引,设置`false`为禁用
     * `redirect`,`Boolean`类型,当路径是一个目录时,重定向到尾随`/`,
     * `etHeaders`,`Function`类型,设置`HTTP`标头以供文件使用的函数
-## 2. `Etag`
+## 1.2. `Etag`
 > `ETag`是`HTTP1.1`中才加入的一个属性,用来帮助服务器控制`Web`端的缓存验证.它的原理是这样的,当浏览器请求服务器的某项资源`A`时, 服务器根据`A`算出一个哈希值`(3f80f-1b6-3e1cb03b)`并通过`ETag`返回给浏览器,浏览器把`3f80f-1b6-3e1cb03b`和`A`同时缓存在本地,当下次再次向服务器请求A时,会通过类似 `If-None-Match: "3f80f-1b6-3e1cb03b"`的请求头把`ETag`发送给服务器,服务器再次计算`A`的哈希值并和浏览器返回的值做比较,如果发现`A`发生了变化就把A返回给浏览器`200`,如果发现`A`没有变化就给浏览器返回一个`304`未修改.这样通过控制浏览器端的缓存,可以节省服务器的带宽,因为服务器不需要每次都把全量数据返回给客户端.
 
 > 注：`HTTP`中并没有指定如何生成`ETag`,哈希是比较理想的选择.
-## 3. 建立基本的HTTP服务器
+## 1.3. 建立基本的HTTP服务器
 ```javascript
 const express = require('express');
 let app = express();
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 
 app.listen(3000);
 ```
-## 4. `app`对象的`locals`属性
+## 1.4. `app`对象的`locals`属性
 + 可以在`locals`对象上自定义属性
 + `app.locals.title = 'my express title';`
 + `app.locals.email = 'express@express.com';`
@@ -57,7 +57,7 @@ app.listen(3000);
 }
 ```
 
-## 5. `app.all(path, callback(req, res, next){...})`
+## 1.5. `app.all(path, callback(req, res, next){...})`
 ```javascript
 app.all('*', fn1, fn2...)
 // 等价于
@@ -65,7 +65,8 @@ app.all('*', fn1)
 app.all('*', fn2)
 ```
 
-## 6. `app.delete(path, callback [, callback ...])`
+## 1.6. 删除请求路由
++ `app.delete(path, callback [, callback ...])`
 + 将HTTP删除请求路由到具有指定回调函数的指定路径
 ```javascript
 app.delete('/', function (req, res) {
@@ -73,7 +74,7 @@ app.delete('/', function (req, res) {
 });
 ```
 
-## 7. 禁用启用某个属性
+## 1.7. 禁用启用某个属性
 + 禁用`app.disable(name)`,`app.disabled(name)`
 + 启用`app.able(name)`,`app.abled(name)`
 ```javascript
@@ -85,7 +86,7 @@ app.disable('username');
 console.log(app.get('username')); //false
 ```
 
-## 8. 模板引擎
+## 1.8. 模板引擎
 + `app.engine(ext, callback)`
 + 根据不同的模板引擎的扩展名,使用不同的模板
 ```javascript
@@ -93,13 +94,13 @@ app.engine('jade', require('jade').__express);
 app.engine('html', require('ejs').renderFile);
 ```
 
-## 9. 设置与获取属性
+## 1.9. 设置与获取属性
 ```javascript
 app.set('title', 'text');
 console.log(app.get('title')); // text
 ```
 
-## 10. `get`请求
+## 1.10. `get`请求
 + `app.get(path, callback [, callback ...])`
 + 将`HTTP`获取请求路由到具有指定回调函数的指定路径
 ```javascript
@@ -108,7 +109,7 @@ app.get('/', function (req, res) {
 });
 ```
 
-## 11. 监听端口
+## 1.11. 监听端口
 + `app.listen(port, [hostname], [backlog], [callback(err)])`
 + 监听端口,主机,最大连接数量,回调函数
 ```javascript
@@ -128,7 +129,7 @@ app.listen(3000, 'localhost', 100, function (err) {
 });
 ```
 
-## 12. 路由参数
+## 1.12. 路由参数
 + `app.param([name],callback(req, res, next, id){...})`
 > 将回调触发器添加到路由参数, 其中名称是参数的名称或它们的数组, 函数是回调函数.回调函数的参数是请求对象、响应对象、下一个中间件以及该参数的值 (按该顺序).
   
@@ -181,7 +182,7 @@ this matches too
 */
 ```
 
-## 13. `app.path()`
+## 1.13. `app.path()`
 + 返回应用程序的规范化路径
 ```javascript
 let express = require('express');
@@ -197,11 +198,11 @@ console.log(blog.path());
 console.log(blogAdmin.path());
 ```
 
-## 14. 模板渲染
+## 1.14. 模板渲染
 + `app.render(view, [locals], callback(err,html){...})`
 + 回调函数返回视图的呈现 HTML
 
-## 15. 路由设置
+## 1.15. 路由设置
 + `app.route(path)`
 + 返回单个路由的实例
 ```javascript
@@ -221,7 +222,7 @@ app.route('/one')
     });
 ```
 
-## 16. 中间件
+## 1.16. 中间件
 + `app.use([path,] callback(req, res, next){...})`
 + 在路径上装载中间件函数.如果未指定路径, 则默认为`/`
 + 路径可以是表示路径、路径模式、匹配路径的正则表达式或其组合数组的字符串

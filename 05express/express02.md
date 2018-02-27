@@ -1,4 +1,4 @@
-# 2. request
+## 2. request
 > req对象表示HTTP请求,并且具有请求查询字符串,参数,正文,http标题头等属性
 ```javascript
 app.get('/user/:id', function (req, res) {
@@ -33,7 +33,9 @@ app.use('/greet', greet);
 ## 2.3 `req.body`和`req.cookies`
 + 包含在请求正文中提交的数据的键值对,默认情况下,它是未定义的,当您使用体解析中间件(如`body-parser`和`multer`)时,它将被填充
 ```javascript
-let bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 let app = express();
 
 app.use(bodyParser.json());// parsing application/json
@@ -50,10 +52,21 @@ app.post('/', function (req, res) {
     console.log(req.body);
     res.json(req.body);
 });
+
+app.listen(3000);
 ```
 
-### 2.4 `fresh,hostname,ip,ips,protocol`
+## 2.4 `fresh`,`hostname`,`ip`,`ips`,`protocol`
 ```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
+let app = express();
+
+app.use(bodyParser.json());// parsing application/json
+app.use(bodyParser.urlencoded({extended: true}));// parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+
 app.get('/files/download/:user', function (req, res) {
     console.log('req.fresh:', req.fresh);
     console.log('req.stale:', req.stale);
@@ -66,9 +79,10 @@ app.get('/files/download/:user', function (req, res) {
     console.log('req.xhr:', req.xhr);
     console.log('req.params:', req.params);
     console.log('req.path:', req.path);
-    console.log('time line===========');
-    res.json(req.body);
+    res.send(req.body);
 });
+
+app.listen(3000);
 /***
 request url: http://localhost:1111/files/download/mark
 req.fresh: false
@@ -85,15 +99,15 @@ req.params: { user: 'mark' }
 req.path: /files/download/mark
 ***/
 ```
-### 2.5 `req.route`
+## 2.5 `req.route`
 ```javascript
 app.get('/user/:id?', function(req, res){
     console.log(req.route);
     res.send('send get message route')
 });
 /***
-Route {
-  path: '/user/:id?',
+req.route: Route {
+  path: '/files/download/:user',
   stack:
    [ Layer {
        handle: [Function],
@@ -103,7 +117,5 @@ Route {
        keys: [],
        regexp: /^\/?$/i,
        method: 'get' } ],
-  methods: { get: true } 
-}
-***/
+  methods: { get: true } }
 ```
