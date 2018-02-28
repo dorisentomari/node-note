@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e312394-e6e1-4318-9321-7532d24ba8f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/03命令行/imoocCrawler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/03命令行/info.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/03命令行/minimist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/03命令行/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/03命令行/usage.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02爬虫/crawler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02爬虫/imoocCrawler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02爬虫/requestCheerio.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04mongoose/connect.js" afterPath="$PROJECT_DIR$/04mongoose/connect.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,33 +20,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="requestCheerio.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02爬虫/requestCheerio.js">
+      <file leaf-file-name="connect.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04mongoose/connect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="52" />
+            <state relative-caret-position="330">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02爬虫/crawler.js">
+      <file leaf-file-name="operate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04mongoose/operate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1298">
-              <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state relative-caret-position="44">
+              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="express01.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/05express/express01.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="198">
-                <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-                <folding />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="236">
+                <caret line="135" column="99" lean-forward="false" selection-start-line="135" selection-start-column="91" selection-end-line="135" selection-end-column="99" />
+                <folding>
+                  <marker date="1519738611324" expanded="true" signature="1295:1327" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="2280:2327" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3071:3115" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3325:3355" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3409:3545" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3424:3461" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3467:3543" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="3922:3974" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4019:4076" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4115:4184" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4187:4249" ph="/**called only once ...*/" />
+                  <marker date="1519738611324" expanded="true" signature="4329:4385" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4436:4493" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4538:4607" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="4610:4697" ph="/**called only once kkk ...*/" />
+                  <marker date="1519738611324" expanded="true" signature="5205:5262" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="5299:5394" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="5318:5386" ph="{&quot;msg&quot;: 'route get msg'...}" />
+                  <marker date="1519738611324" expanded="true" signature="5432:5488" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="6078:6221" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="6393:6425" ph="{...}" />
+                  <marker date="1519738611324" expanded="true" signature="6495:6523" ph="{...}" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -59,6 +81,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="MarkDown File" />
       </list>
     </option>
@@ -67,16 +90,17 @@
     <findStrings>
       <find>node</find>
       <find>DNS</find>
-      <find>) {</find>
       <find />
       <find>var</find>
       <find>test</find>
+      <find>) {</find>
     </findStrings>
     <replaceStrings>
       <replace>javascript</replace>
       <replace>`DNS`</replace>
       <replace>)=&gt; {</replace>
       <replace>let</replace>
+      <replace>) =&gt; {</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -101,6 +125,9 @@
         <option value="$PROJECT_DIR$/03命令行/info.md" />
         <option value="$PROJECT_DIR$/03命令行/minimist.js" />
         <option value="$PROJECT_DIR$/03命令行/node命令行.md" />
+        <option value="$PROJECT_DIR$/02爬虫/huizhi.js" />
+        <option value="$PROJECT_DIR$/02爬虫/pachong.md" />
+        <option value="$PROJECT_DIR$/04mongoose/connect.js" />
       </list>
     </option>
   </component>
@@ -142,6 +169,11 @@
               <item name="Node.jsNotes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Node.jsNotes" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Node.jsNotes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Node.jsNotes" type="462c0819:PsiDirectoryNode" />
+              <item name="05express" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -182,18 +214,18 @@
       <option name="presentableId" value="Default" />
       <updated>1519738413917</updated>
       <workItem from="1519738417484" duration="6263000" />
-      <workItem from="1519821974321" duration="4033000" />
+      <workItem from="1519821974321" duration="8098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10296000" />
+    <option name="totallyTimeSpent" value="14361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118303575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13318452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -267,16 +299,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="154">
             <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05express/express01.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-1232">
-            <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="23" />
           </first_editor>
           <second_editor />
         </state>
@@ -480,28 +502,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="308">
+            <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/02爬虫/requestCheerio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="218">
           <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02爬虫/imoocCrawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02爬虫/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1298">
-          <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state relative-caret-position="-836">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/02爬虫/huizhi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02爬虫/pachong.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="198">
-            <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="220">
+            <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
             <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04mongoose/connect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04mongoose/operate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05express/express01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="236">
+            <caret line="135" column="99" lean-forward="false" selection-start-line="135" selection-start-column="91" selection-end-line="135" selection-end-column="99" />
+            <folding>
+              <marker date="1519738611324" expanded="true" signature="1295:1327" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="2280:2327" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3071:3115" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3325:3355" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3409:3545" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3424:3461" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3467:3543" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="3922:3974" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4019:4076" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4115:4184" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4187:4249" ph="/**called only once ...*/" />
+              <marker date="1519738611324" expanded="true" signature="4329:4385" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4436:4493" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4538:4607" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="4610:4697" ph="/**called only once kkk ...*/" />
+              <marker date="1519738611324" expanded="true" signature="5205:5262" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="5299:5394" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="5318:5386" ph="{&quot;msg&quot;: 'route get msg'...}" />
+              <marker date="1519738611324" expanded="true" signature="5432:5488" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6078:6221" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6393:6425" ph="{...}" />
+              <marker date="1519738611324" expanded="true" signature="6495:6523" ph="{...}" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
