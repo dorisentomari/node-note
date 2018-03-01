@@ -1,4 +1,0 @@
-客户端请求的方法为:POST
-客户端请求的url字符串为:/
-客户端请求头对象为:{"host":"localhost:2576","user-agent":"Mozilla/5.0 (X11; Linux x86_64; rv:17.0) Gecko/20131029 Firefox/17.0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-language":"en-US,en;q=0.5","accept-encoding":"gzip, deflate","connection":"keep-alive","content-type":"application/x-www-form-urlencoded","content-length":"33"}
-客户端请求所用的HTTP版本为:1.1
