@@ -4,9 +4,9 @@
 
 ## 1. Linux环境配置
 **必须安装的软件**
-#### 1.1 Ubuntu
+### 1.1 Ubuntu
 + `sudo apt-get install git vim openssl build-essential libssh-dev wget curl`
-#### 1.2 CentOS
+### 1.2 CentOS
 + 更改`yum`源与更新系统
 + 首先备份`/etc/yum.repos.d/CentOS-Base.repo`
 + `cd /etc/yum.repos.d/`
@@ -23,19 +23,19 @@
 + `nvm alias default <版本号>`
 
 ## 3. Sublime安装
-#### 3.1 Debian/Ubuntu使用APT安装
+### 3.1 Debian/Ubuntu使用APT安装
 + `wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -`
 + `sudo apt-get install apt-transport-https`
 + `echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list`
 + `sudo apt-get update`
 + `sudo apt-get install sublime-text`
-#### 3.2 CentOS使用Yum安装
+### 3.2 CentOS使用Yum安装
 + `sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg`
 + `sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo`
 + `sudo yum install sublime-text`
 
 ## 4. MongoDB安装(v3.6)
-#### 4.1 Ubuntu安装
+### 4.1 Ubuntu安装
 + `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5`
 + Ubuntu 14.04:`echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
 + Ubuntu 16.04:`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
@@ -44,7 +44,7 @@
 + `sudo apt-get install -y mongodb-org=3.6.1 mongodb-org-server=3.6.1 mongodb-org-shell=3.6.1 mongodb-org-mongos=3.6.1 mongodb-org-tools=3.6.1`
 + `sudo service mongod start`
 
-#### 4.2 CentOS安装
+### 4.2 CentOS安装
 +  在`/etc/yum.repos.d/mongodb-org-3.6.repo`文件下输入一下内容
 ```
 [mongodb-org-3.6]
@@ -58,7 +58,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 + `sudo yum install -y mongodb-org-3.6.1 mongodb-org-server-3.6.1 mongodb-org-shell-3.6.1 mongodb-org-mongos-3.6.1 mongodb-org-tools-3.6.1`
 + `sudo service mongod start`
 
-#### 4.3 Windows安装
+### 4.3 Windows安装
 + 从官网下载安装包进行安装,安装目录为`F:/software/MongoDB/`
 + 创建data目录，在data目录下创建db和log两个目录
 + 进入`F:/software/MongoDB/bin`目录,`F:\software\MongoDB\bin>mongod --dbpath F:\software\MongoDB\data\db`
@@ -71,29 +71,28 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + 利用管理员身份打开命令行,输入`mongod --config F:/software/MongoDB/mongodb.config --install --serviceName "MongoDB"`
 
 ## 5.`Redis`安装
-+ `wget http://download.redis.io/releases/redis-4.0.1.tar.gz`
-+ `tar xzf redis-4.0.1.tar.gz`
-+ `cd redis-4.0.1`
-+ `make`
-+ 安装Redis：`make PREFIX=/user/local/redis install`
-+ **Redis安装目录`/usr/local/redis`**
-+ 将redis.conf拷贝到Redis安装目录：`cp redis.conf /usr/local/redis`
-+ 进入安装目录，更改redis.conf文件：`vim redis.conf --> daemonize no 改为 yes`
-+ 启动redis后端模式：`/usr/local/redis/bin/redis-server /usr/local/redis/redis.conf`
-+ 使用 `ps -ef  | grep -i redis` 查看服务是否启动
-+ 使用 `./bin/redis-cli shutdown` 停止服务
-+ 从redis目录下输入`./bin/redis-cli`,再输入`ping`输出`PONG`表示连接没有问题
-+  java使用 jedis 链接远程 远程redis 需要在 `redis.conf` 添加 `bind 167.88.179.35` （本机IP）
++ 获取文件`wget http://download.redis.io/redis-stable.tar.gz`
++ 解压文件`tar xzvf redis-stable.tar.gz`
++ 进入目录`cd redis-stable`
++ 编译`make`
++ 安装`make install`
++ 设置配置文件路径`mkdir -p /etc/redis`,`cp redis.conf /etc/redis`
++ 修改配置文件`vi /etc/redis/redis.conf`
+    + 将`daemonize no`该为`daemonize yes `
+    + `bind 127.0.0.1 `
+    + `bind 192.168.0.20`(本机IP)
++ 启动`/usr/local/bin/redis-server /etc/redis/redis.conf`
++ 查看启动`ps -ef | grep redis`
 
 ## 6. Yarn安装
 + `yarn config set registry https://registry.npm/taobao.org`
 
-#### 6.1 Debian/Ubuntu
+### 6.1 Debian/Ubuntu
 + `curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -`
 + `echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
 + `sudo apt-get update && sudo apt-get install yarn`
 
-#### 6.2 CentOS/Fedora/RHEL
+### 6.2 CentOS/Fedora/RHEL
 + `sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo`
 + `curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -`
 + `sudo yum install yarn`
@@ -115,6 +114,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + 创建本地分支`git branch <branchName>`
 + 切换分支`git checkout <branchName>`
 + 将本地分支push到远程分支`git push origin <localBranchName>:<remoteBranchName>`，只写这一条命令，表示创建一个远程分支
++ 将git的提交记录导出为文件`git --no-pager log > log.txt`
 
 ## 8. 升级gcc
 + link:`http://blog.csdn.net/origin_lee/article/details/43231397`
@@ -130,7 +130,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 
 ## 9. 安装Nginx
 **全部安装在`/usr/local/src`目录下边**
-#### 9.1 安装PCRE库
+### 9.1 安装PCRE库
 + `cd /usr/local/src`
 + `wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz`
 + `tar zxvf pcre-8.39.tar.gz`
@@ -139,7 +139,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + `make`
 + `make install`
 
-#### 9.2 安装Zlib库
+### 9.2 安装Zlib库
 + `cd /usr/local/src`
 + `wget http://zlib.net/zlib-1.2.11.tar.gz`
 + `tar zxvf zlib-1.2.11.tar.gz`
@@ -156,19 +156,19 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + `make`
 + `make install`
 
-#### 9.4 安装Nginx
+### 9.4 安装Nginx
 + `cd /usr/local/`
 + `wget http://nginx.org/download/nginx-1.8.0.tar.gz`
 + `tar -zxvf nginx-1.8.0.tar.gz`
 + `cd nginx-1.8.0`
 + `./configure --prefix=/usr/local/nginx --with-pcre=/usr/local/pcre-8.39 --with-zlib=/usr/local/zlib-1.2.11`
     * 在`--prefix`后面接以下命令:
-    * `--with-pcre=/usr/local/pcre-8.39` 指的是pcre-8.39 的源码路径。
-    * `--with-zlib=/usr/local/zlib-1.2.11` 指的是zlib-1.2.11 的源码路径。 
+    * `--with-pcre=/usr/local/pcre-8.39`指的是`pcre-8.39`的源码路径。
+    * `--with-zlib=/usr/local/zlib-1.2.11`指的是`zlib-1.2.11`的源码路径。 
 + `make`
 + `make install`
 
-#### 9.5 Nginx控制
+### 9.5 Nginx控制
 + 启动:`/usr/local/nginx/sbin/nginx`or`/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf`
 + 重启:`/usr/local/nginx/sbin/nginx -s reload`or`kill -HUP <pid>`
 + 停止:`/usr/local/nginx/sbin/nginx -s stop`
