@@ -1,4 +1,4 @@
-## Node.js连接`mongodb`数据库
+## Node.js利用`mongoose`连接`mongodb`数据库
 > Node.js连接`mongodb`数据库有很多种方法，通过`mongoose`模块引入是其中的一个方法
 + 代码组织结构
 ```
@@ -11,8 +11,8 @@
 
 ## 1. 引入`mongoose`测试连接
 > 当前使用的`mongoose`版本为`4.13.7`
-### 1.1 代码部分
 + 该文件为`connect.js`
+### 1.1 代码部分
 ```javascript
 const mongoose = require("mongoose");
 const DB_URL = "mongodb://127.0.0.1:27017/infos";
@@ -50,6 +50,7 @@ module.exports = mongoose;
 
 ## 2. 定义每张数据表的字段
 + 该文件为`user.js`
+### 2.1 代码介绍
 ```javascript
 const mongoose = require('mongoose');
 const db = require('./connect.js');
@@ -175,7 +176,7 @@ module.exports = {
 	}
 };
 ```
-### 3.2 代码逐行分析
+### 3.2 代码分析
 + 引入`user`模块
 + `let userModel = require('../models/users');`
 + 引入该文件的目的是，让`userModel`这个数据表直接的调用`mongodb`的各种方法
