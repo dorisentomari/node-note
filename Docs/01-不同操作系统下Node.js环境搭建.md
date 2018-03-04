@@ -1,6 +1,6 @@
 ## 基本介绍
-+ 这是一个基本的`Node.js`环境搭建，不同的操作系统可以选择不同的安装方式
-+ 如果不需要太多的安装步骤，就直接在`Node.js`官网下载最新版安装包进行安装即可
++ 这是一个基本的`Node.js`环境搭建,不同的操作系统可以选择不同的安装方式
++ 如果不需要太多的安装步骤,就直接在[Node.js](https://nodejs.org/zh-cn/)官网下载最新版安装包进行安装即可
 
 ## 1. Linux环境配置
 **必须安装的软件**
@@ -10,16 +10,16 @@
 + 更改`yum`源与更新系统
 + 首先备份`/etc/yum.repos.d/CentOS-Base.repo`
 + `cd /etc/yum.repos.d/`
-+ 下载163的yum源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
++ 下载`163`的`yum`源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
 + 运行`yum makecache`生成缓存`yum makecache`
 + 更新系统`yum -y update`
 
-## 2. Node安装(使用NVM)
-+ `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
-+ `nvm use node`
-+ `nvm install <Node版本号>`
-+ `npm install -g cnpm --registry=https://registry.npm.taobao.org`
-+ `cnpm install http-server express express-generator webpack webpack-dev-server gulp nodemon pm2 vue-cli -g`
+## 2. Node.js安装(使用[NVM](https://github.com/creationix/nvm))
++ 安装`nvm`命令`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
++ 安装`Node.js`版本`nvm install <Node.js版本号>`,例如`nvm install 9.3.0`,就是安装`Node.js`9.3.0版本
++ 如果直接使用`node`命令没有效果，需要先输入该命令`nvm use node`
++ 切换`cnpm`淘宝镜像`npm install -g cnpm --registry=https://registry.npm.taobao.org`
++ 安装基本的`npm`依赖包`cnpm install http-server express express-generator webpack webpack-dev-server gulp nodemon pm2 vue-cli -g`
 + `nvm alias default <版本号>`
 
 ## 3. Sublime安装
@@ -37,32 +37,33 @@
 ## 4. MongoDB安装(v3.6)
 ### 4.1 Ubuntu安装
 + `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5`
-+ Ubuntu 14.04:`echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
-+ Ubuntu 16.04:`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
++ Ubuntu 14.04版本操作系统:`echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
++ Ubuntu 16.04版本操作系统:`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
 + `sudo apt-get update`
 + `sudo apt-get install -y mongodb-org`
 + `sudo apt-get install -y mongodb-org=3.6.1 mongodb-org-server=3.6.1 mongodb-org-shell=3.6.1 mongodb-org-mongos=3.6.1 mongodb-org-tools=3.6.1`
 + `sudo service mongod start`
 
-### 4.2 CentOS安装
-+  在`/etc/yum.repos.d/mongodb-org-3.6.repo`文件下输入一下内容
+### 4.2 CentOS安装(v3.4)
++  在`/etc/yum.repos.d/mongodb-org-3.4.repo`文件下输入一下内容
 ```
-[mongodb-org-3.6]
+[mongodb-org-3.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 ```
-+ `sudo yum install -y mongodb-org`
-+ `sudo yum install -y mongodb-org-3.6.1 mongodb-org-server-3.6.1 mongodb-org-shell-3.6.1 mongodb-org-mongos-3.6.1 mongodb-org-tools-3.6.1`
-+ `sudo service mongod start`
++ 安装`mongodb`命令`sudo yum install -y mongodb-org`
++ 开启`mongodb`服务`sudo service mongod start`
++ 关闭`mongodb`服务`sudo service mongod stop`
++ 重启`mongodb`服务`sudo service mongod restart`
 
 ### 4.3 Windows安装
 + 从官网下载安装包进行安装,安装目录为`F:/software/MongoDB/`
-+ 创建data目录，在data目录下创建db和log两个目录
++ 创建`data`目录,在`data`目录下创建`db`和`log`两个目录
 + 进入`F:/software/MongoDB/bin`目录,`F:\software\MongoDB\bin>mongod --dbpath F:\software\MongoDB\data\db`
-+ 进入刚创建的log目录,创建`mongodb.log`文件
++ 进入刚创建的`log`目录,创建`mongodb.log`文件
 + 进入`F:/software/MongoDB/`目录,创建`mongodb.config`配置文件
 ```
 dbpath=F:/software/MongoDB/data/db
@@ -70,7 +71,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 ```
 + 利用管理员身份打开命令行,输入`mongod --config F:/software/MongoDB/mongodb.config --install --serviceName "MongoDB"`
 
-## 5.`Redis`安装
+## 5.Redis安装
 + 获取文件`wget http://download.redis.io/redis-stable.tar.gz`
 + 解压文件`tar xzvf redis-stable.tar.gz`
 + 进入目录`cd redis-stable`
@@ -98,26 +99,25 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + `sudo yum install yarn`
 
 ## 7. git的使用方法
++ 安装`git`软件`yum install git-core`
 + 生成ssh命令`ssh-keygen -t rsa -C "yourmail@mail.com"`
-+ `git config --global user.name "Dawnight"`
-+ `git config --global user.email "yourmail@mail.com"`
-+ `yum install git-core`
-+ `git add .`
-+ `git status`
-+ `git commit -m "some messages"`
-+ `git remote rm origin`
-+ `git remote add origin <remoteRepositoryAddress>`
-+ `git push origin master`
-+ `git pull origin master`，同步master代码
++ 配置用户名`git config --global user.name "Dawnight"`
++ 配置邮箱`git config --global user.email "yourmail@mail.com"`
++ 添加文件到缓存区`git add .`
++ 查看文件状态`git status`
++ 提交命令`git commit -m "some messages"`
++ 移除远程源`git remote rm origin`
++ 提交代码到远程`git remote add origin <remoteRepositoryAddress>`
++ 将代码推送到远程`git push origin master`
++ 将本地代码与远程同步`git pull origin master`,同步`master`代码
 + 查看本地分支`git branch -a`
 + 查看远程分支`git branch -r`
 + 创建本地分支`git branch <branchName>`
 + 切换分支`git checkout <branchName>`
-+ 将本地分支push到远程分支`git push origin <localBranchName>:<remoteBranchName>`，只写这一条命令，表示创建一个远程分支
++ 将本地分支`push`到远程分支`git push origin <localBranchName>:<remoteBranchName>`,只写这一条命令,表示创建一个远程分支
 + 将git的提交记录导出为文件`git --no-pager log > log.txt`
 
-## 8. 升级gcc
-+ link:`http://blog.csdn.net/origin_lee/article/details/43231397`
+## 8. 升级gcc[链接](http://blog.csdn.net/origin_lee/article/details/43231397)
 + `wget http://gcc.skazkaforyou.com/releases/gcc-4.9.1/gcc-4.9.1.tar.gz` **or** `wget http://gcc.skazkaforyou.com/releases/gcc-4.8.2/gcc-4.8.2.tar.gz`
 + `tar -xf gcc-4.9.1.tar.gz`
 + `cd gcc-4.9.1`
