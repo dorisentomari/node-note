@@ -58,6 +58,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 + 开启`mongodb`服务`sudo service mongod start`
 + 关闭`mongodb`服务`sudo service mongod stop`
 + 重启`mongodb`服务`sudo service mongod restart`
++ 配置文件是`etc/mongo.conf`,可以通过配置该文件,修改配置,然后再重启`mongodb`数据库
 
 ### 4.3 Windows安装
 + 从官网下载安装包进行安装,安装目录为`F:/software/MongoDB/`
