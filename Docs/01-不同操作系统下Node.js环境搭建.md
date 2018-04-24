@@ -19,10 +19,10 @@
 + 安装`Node.js`版本`nvm install <Node.js版本号>`,例如`nvm install 9.3.0`,就是安装`Node.js`9.3.0版本
 + 如果直接使用`node`命令没有效果，需要先输入该命令`nvm use node`
 + 切换`cnpm`淘宝镜像`npm install -g cnpm --registry=https://registry.npm.taobao.org`
-+ 安装基本的`npm`依赖包`cnpm install http-server express express-generator webpack webpack-dev-server gulp nodemon pm2 vue-cli -g`
++ 安装基本的`npm`依赖包`cnpm install express-generator nodemon pm2 vue-cli -g`
 + `nvm alias default <版本号>`
 
-## 3. Sublime安装
+## 3. Sublime安装(目前安装有问题)
 ### 3.1 Debian/Ubuntu使用APT安装
 + `wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -`
 + `sudo apt-get install apt-transport-https`
