@@ -44,15 +44,15 @@
 + `sudo apt-get install -y mongodb-org=3.6.1 mongodb-org-server=3.6.1 mongodb-org-shell=3.6.1 mongodb-org-mongos=3.6.1 mongodb-org-tools=3.6.1`
 + `sudo service mongod start`
 
-### 4.2 CentOS安装(v3.4)
-+  在`/etc/yum.repos.d/mongodb-org-3.4.repo`文件下输入一下内容
+### 4.2 CentOS安装(v3.6,[官网链接](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/))
++  在`/etc/yum.repos.d/mongodb-org-3.6.repo`文件下输入一下内容
 ```
-[mongodb-org-3.4]
+[mongodb-org-3.6]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 ```
 + 安装`mongodb`命令`sudo yum install -y mongodb-org`
 + 开启`mongodb`服务`sudo service mongod start`
