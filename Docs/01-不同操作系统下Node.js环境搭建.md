@@ -186,3 +186,11 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
     * `USR1`,切换日志文件 `kill -USR1 <pid>`
     * `USR2`,平滑升级可执行进行 `kill -USR2 <pid>`
     * `WINCH`,从容关闭工作进程
+
+## 10. 安装MySQL
+### 10.1 CentOS上安装
++ `wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
++ `sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm`
++ `yum update`
++ `sudo yum install mysql-server`
++ `sudo systemctl start mysqld`
