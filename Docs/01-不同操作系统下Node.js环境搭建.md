@@ -2,6 +2,12 @@
 + 这是一个基本的`Node.js`环境搭建,不同的操作系统可以选择不同的安装方式
 + 如果不需要太多的安装步骤,就直接在[Node.js](https://nodejs.org/zh-cn/)官网下载最新版安装包进行安装即可
 
+## 0. CentOS快速安装需要的软件
++ 切换yum源
++ 安装不同版本的Node.js `nvm install 6.9.3 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g && nvm install 9.3.0 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g && nvm install 8.9.1 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g`
++ 安装MongoDB
++ 安装git`yum install git-core -y`
+
 ## 1. Linux环境配置
 **必须安装的软件**
 ### 1.1 Ubuntu
