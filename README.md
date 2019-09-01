@@ -215,3 +215,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + `yum update`
 + `sudo yum install mysql-server`
 + `sudo systemctl start mysqld`
++ `sudo systemctl stop mysqld`
++ `sudo mysqld --user=root --skip-grant-tables &`
++ `UPDATE mysql.user SET authentication_string=PASSWORD('') where USER='root';`
++ `alter user 'root'@localhost IDENTIFIED WITH mysql_native_password by '';`
