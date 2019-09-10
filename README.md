@@ -34,6 +34,10 @@
 + 下载`163`的`yum`源配置文件`wget http://mirrors.163.com/.help/CentOS6-Base-163.repo`
 + 运行`yum makecache`生成缓存`yum makecache`
 + 更新系统`yum -y update`
++ conda：未找到命令
+    + `vim ~/.bashrc`
+    + 修改环境变量: `export PATH=~/anaconda3/bin:$PATH`
+    + 重启环境变量: `source ~/.bashrc`
 
 ## 2. Node.js安装(使用[NVM](https://github.com/creationix/nvm))
 + 安装`nvm`命令`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
