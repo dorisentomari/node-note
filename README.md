@@ -22,6 +22,10 @@
 + 安装不同版本的Node.js `nvm install 6.9.3 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g && nvm install 9.3.0 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g && nvm install 8.9.1 && npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install express-generator nodemon pm2 http-server -g`
 + 安装MongoDB
 + 安装git`yum install git-core -y`
++ 防火墙
+    + 查看防火墙状态 `firewall-cmd --state`
+    + 停止firewall `systemctl stop firewalld.service`
+    + 禁止firewall开机启动 `systemctl disable firewalld.service `
 
 ## 1. Linux环境配置
 **必须安装的软件**
