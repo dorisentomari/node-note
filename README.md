@@ -227,3 +227,7 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 + `sudo mysqld --user=root --skip-grant-tables &`
 + `UPDATE mysql.user SET authentication_string=PASSWORD('') where USER='root';`
 + `alter user 'root'@localhost IDENTIFIED WITH mysql_native_password by '';`
++ 错误信息: 远程连接MYSQL提示Host is not allowed to connect to this MySQL server
+    + `use mysql;`
+    + `update user set host = '%' where user = 'root';`
+    + `flush privileges;` 
