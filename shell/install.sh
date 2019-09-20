@@ -39,8 +39,9 @@ echo "git install successfully"
 # download anaconda
 wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
 echo "anaconda download completed"
-# export PATH="~/anaconda/bin:$PATH"
-# source ~/.bash_profile
+export PATH="~/anaconda/bin:$PATH"
+source ~/.bash_profile
+echo "anaconda install completed"
 
 # install mysql
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
