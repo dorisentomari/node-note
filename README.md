@@ -45,6 +45,7 @@
 
 ## 2. Node.js安装(使用[NVM](https://github.com/creationix/nvm))
 + 安装`nvm`命令`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
++ 备份 nvm sh 文件 `http://file.ikite.top/linux/nvm-0.33.6.sh`
 + 安装`Node.js`版本`nvm install <Node.js版本号>`,例如`nvm install 9.3.0`,就是安装`Node.js`9.3.0版本
 + 如果直接使用`node`命令没有效果，需要先输入该命令`nvm use node`
 + 切换`cnpm`淘宝镜像`npm install -g cnpm --registry=https://registry.npm.taobao.org`
