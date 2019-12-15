@@ -131,9 +131,9 @@ logpath=F:/software/MongoDB/data/log/mongodb.log
 
 ## 7. git的使用方法
 + 安装`git`软件`yum install git-core`
-+ 生成ssh命令`ssh-keygen -t rsa -C "weizhiqimail@mail.com"`
++ 生成ssh命令`ssh-keygen -t rsa -C "weizhiqimail@gmail.com"`
 + 配置用户名`git config --global user.name dawnight`
-+ 配置邮箱`git config --global user.email weizhiqimail@mail.com`
++ 配置邮箱`git config --global user.email weizhiqimail@gmail.com`
 + 添加文件到缓存区`git add .`
 + 查看文件状态`git status`
 + 提交命令`git commit -m "some messages"`
